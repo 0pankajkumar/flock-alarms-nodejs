@@ -7,8 +7,8 @@ var Mustache = require('mustache');
 var fs = require('fs');
 var util = require('util');
 
-flock.appId = config.appId;
-flock.appSecret = config.appSecret;
+flock.appId = config.appId || process.env.appId;
+flock.appSecret = config.appSecret || process.env.appSecret;
 
 var app = express();
 
