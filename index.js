@@ -96,8 +96,8 @@ app.get('/list', function (req, res) {
 
     var currentToken = store.getToken(event.userId);
     console.log("Current token is ",currentToken);
-    var allFriends = store.getAllFriends(currentToken);
-    console.log(allFriends);
+    // var allFriends = store.getAllFriends(currentToken);
+    // console.log(allFriends);
 
 
     res.set('Content-Type', 'text/html');
