@@ -95,7 +95,7 @@ app.get('/list', function (req, res) {
     });
 
     var currentToken = store.getToken(event.userId);
-    console.log(`Current token is {currentToken}`);
+    console.log(`Current token is ${currentToken}`);
     var hi = flock.callMethod('roster.listContacts', currentToken
         , function (error, response) {
             console.log("Roster Method called ");
