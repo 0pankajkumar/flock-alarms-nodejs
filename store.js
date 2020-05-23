@@ -83,7 +83,9 @@ exports.getAllFriends = (currentToken) => {
             data += chunk;
         });
         resp.on('end', () => {
-            console.log(JSON.parse(data).explanation);
+            let ans = JSON.parse(data).explanation;
+            console.log(ans);
+            return ans;
         });
     }).on("error", (err) => {
       console.log("Errorrrrrrrrrrrrrrrrr: " + err.message);
