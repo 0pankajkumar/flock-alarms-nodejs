@@ -93,6 +93,17 @@ app.get('/list', function (req, res) {
             timeString: new Date(alarm.time).toLocaleString()
         }
     });
+
+    var currentToken = store.getToken(event.userId);
+    flock.callMethod('roster.listContacts', currentToken
+        , function (error, response) {
+        if (!error) {
+            console.log("Here is the list of friends %%%%%%%%%%%%%%%%");
+            console.log(response);
+        }
+    });
+
+
     res.set('Content-Type', 'text/html');
     var body = Mustache.render(listTemplate, { alarms: alarms });
     res.send(body);
