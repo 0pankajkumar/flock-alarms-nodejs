@@ -11,6 +11,14 @@ flock.appId = config.appId;
 flock.appSecret = config.appSecret;
 
 var app = express();
+
+var cors = require('cors');
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(flock.events.tokenVerifier);
 app.post('/events', flock.events.listener);
 

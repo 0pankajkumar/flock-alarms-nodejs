@@ -4,13 +4,14 @@
   "description": "Alarms for Flock",
   "main": "index.js",
   "scripts": {
-	"start": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Riva FZC",
   "license": "ISC",
   "dependencies": {
     "chrono-node": "^1.2.5",
+    "cors": "^2.8.5",
     "express": "^4.14.1",
     "flockos": "0.0.6",
     "mustache": "^2.3.0"
