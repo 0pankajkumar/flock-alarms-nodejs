@@ -78,7 +78,7 @@ var scheduleAlarm = function (alarm) {
 store.allAlarms().forEach(scheduleAlarm);
 
 var sendAlarm = function (alarm) {
-    flock.chat.sendMessage(config.botToken, {
+    flock.chat.sendMessage(config.botToken || process.env.botToken, {
         to: alarm.userId,
         text: alarm.text
     });
