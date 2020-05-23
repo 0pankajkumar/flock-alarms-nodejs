@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var request = require('request');
 var dbFile = 'db.json';
 
 // Everything is stored here
@@ -73,4 +74,22 @@ exports.userAlarms = function (userId) {
 
 exports.allAlarms = function () {
     return db.alarms;
+};
+
+exports.getAllFriends = (currentToken) => {
+    request.post(
+        'https://api.flock.co/v1/roster.listContacts',
+        { json: { token: currentToken } },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+                return "error";
+            }
+            else{
+                console.log("It passed");
+                console.log(response);
+                return response;
+            }
+        }
+    );
 };
