@@ -82,12 +82,12 @@ exports.getAllFriends = (currentToken) => {
         { json: { token: currentToken } },
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                console.log(body);
+                // console.log(body);
                 return "error";
             }
             else{
                 console.log("It passed");
-                console.log(response);
+                // console.log(response);
                 return response;
             }
         }
