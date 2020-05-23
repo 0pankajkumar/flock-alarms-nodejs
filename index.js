@@ -101,6 +101,9 @@ app.get('/list', function (req, res) {
             console.log("Here is the list of friends %%%%%%%%%%%%%%%%");
             console.log(response);
         }
+        else{
+            console.log("we ran into a lot of error");
+        }
     });
 
 
