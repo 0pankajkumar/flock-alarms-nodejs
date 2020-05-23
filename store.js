@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var request = require('request');
+var https = require('https');
 var dbFile = 'db.json';
 
 // Everything is stored here
@@ -77,19 +77,15 @@ exports.allAlarms = function () {
 };
 
 exports.getAllFriends = (currentToken) => {
-    request.post(
-        'https://api.flock.co/v1/roster.listContacts',
-        { json: { token: currentToken } },
-        function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                // console.log(body);
-                return "error";
-            }
-            else{
-                console.log("It passed");
-                // console.log(response);
-                return response;
-            }
-        }
-    );
+    https.get('https://api.flock.co/v1/roster.listContacts?token='+currentToken, (resp) => {
+        let data = "";
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+        resp.on('end', () => {
+            console.log(JSON.parse(data).explanation);
+        });
+    }).on("error", (err) => {
+      console.log("Errorrrrrrrrrrrrrrrrr: " + err.message);
+    });
 };
