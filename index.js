@@ -6,11 +6,13 @@ var chrono = require('chrono-node');
 var Mustache = require('mustache');
 var fs = require('fs');
 var util = require('util');
+var helper = require('helper');
 
 flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
 
 var app = express();
+// var router = express.Router();
 
 var cors = require('cors');
 app.use(function(req, res, next) {
@@ -21,6 +23,23 @@ app.use(function(req, res, next) {
 
 app.use(flock.events.tokenVerifier);
 app.post('/events', flock.events.listener);
+
+app.get('/getWebpage' (req, res) => {
+    res.set('Content-Type', 'text/html');
+    var body = Mustache.render(listTemplate, { alarms: '' });
+    res.send(body);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(process.env.PORT || 8080, function () {
     console.log('Listening on 8080');
@@ -96,8 +115,6 @@ app.get('/list', function (req, res) {
 
     var currentToken = store.getToken(event.userId);
     console.log("Current token is ",currentToken);
-    var allFriends = store.getAllFriends(currentToken);
-    console.log(allFriends);
 
 
     res.set('Content-Type', 'text/html');

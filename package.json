@@ -10,6 +10,7 @@
   "author": "Riva FZC",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "chrono-node": "^1.2.5",
     "cors": "^2.8.5",
     "express": "^4.14.1",
