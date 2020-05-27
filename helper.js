@@ -26,4 +26,4 @@ exports.getContacts = (token) => {
 }
 
 
-getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
+// getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
