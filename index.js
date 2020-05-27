@@ -34,11 +34,14 @@ app.get('/getWebpage', (req, res) => {
 
 app.get('/getContacts', (req, res) => {
     res.set('Content-Type', 'application/json');
-    var body = "default";
-    body = await helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
-    res.send(JSON.stringify(body));
-    // helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886')
-    // .then(data => res.send(JSON.stringify(data)));
+
+    try{
+        var getData = helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');        
+        getData.then(d => res.send(JSON.stringify(d)));
+    }
+    catch(e){
+        res.send('some error occured :(');
+    }
 });
 
 

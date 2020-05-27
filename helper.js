@@ -3,28 +3,30 @@
 var axios = require('axios');
 
 // Get JSON of all contact names
-async function getContacts(token){
+function getContacts(token){
 	 var url = 'https://api.flock.co/v1/roster.listContacts?token=' + token;
-	 
-	//  axios.all([
-	//   axios.get(url)
-	// ]).then(axios.spread((response1) => {
-	//   // console.log(response1.data);
-	//   let rawData = response1.data;
-	//   let ans = rawData.map(x => {
-	//   	return {
-	//   		name : x.firstName + ' ' + x.lastName,
-	//   		id : x.id,
-	//   		profileImage: x.profileImage
-	//   	};
-	//   });
-	//   console.log("Length of ans ", ans.length);
 
-	// })).catch(error => {
-	//   console.log(error);
-	// });
+	 return new Promise((resolve, reject) => {
+	 	 axios.all([
+		  axios.get(url)
+			]).then(axios.spread((response1) => {
+			  // console.log(response1.data);
+			  let rawData = response1.data;
+			  let ans = rawData.map(x => {
+			  	return {
+			  		name : x.firstName + ' ' + x.lastName,
+			  		id : x.id,
+			  		profileImage: x.profileImage
+			  	};
+			  });
+			  console.log("Length of ans ", ans.length);
+			  resolve(ans);
 
-	  return {status : 'yippee'};
+			})).catch(error => {
+			  console.log(error);
+			});
+
+	 });
 }
 
 export default getContacts;
