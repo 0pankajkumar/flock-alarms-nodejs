@@ -25,7 +25,7 @@ var contactsData = () => {
     let rawData = fetch('/getContacts')
     .then(response => response.json());
 
-    retunr rawData
+    return rawData;
 }
 
 console.log("Length of data array ", contactsData.length);
