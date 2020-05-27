@@ -27,7 +27,7 @@ var contactsData = () => {
         rawData = data;
       });
 
-    return parse.JSON(rawData);
+    return JSON.parse(rawData);
 
     // let rawData = fetch('/getContacts');
     //.then(response => response.json());
