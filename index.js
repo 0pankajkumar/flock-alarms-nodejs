@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 app.use(flock.events.tokenVerifier);
 app.post('/events', flock.events.listener);
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/getWebpage', (req, res) => {
     res.set('Content-Type', 'text/html');
@@ -32,7 +32,11 @@ app.get('/getWebpage', (req, res) => {
     res.send(body);
 });
 
-
+app.get('/getContacts', (req, res) => {
+    res.set('Content-Type', 'json');
+    var body = helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886')
+    res.send(body);
+});
 
 
 
