@@ -22,7 +22,7 @@
 //      ];
 
 var stocksData = () => {
-    fetch('')
+    fetch('/getContacts')
     .then(response => response.json());
 }
 
