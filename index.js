@@ -6,7 +6,7 @@ var chrono = require('chrono-node');
 var Mustache = require('mustache');
 var fs = require('fs');
 var util = require('util');
-var helper = require('helper');
+var helper = require('./helper');
 
 flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
