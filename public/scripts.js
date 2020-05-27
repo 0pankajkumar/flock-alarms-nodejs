@@ -21,26 +21,26 @@
 //         },
 //      ];
 
-var stocksData = () => {
+var contactsData = () => {
     fetch('/getContacts')
     .then(response => response.json());
 }
 
-console.log("Length of data array ", stocksData.length);
+console.log("Length of data array ", contactsData.length);
     
-var stocks = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('company_name'),
+var contacts = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: stocksData
+        local: contactsData
     });
 
-    stocks.initialize();
+    contacts.initialize();
 
     $('.typeahead').typeahead(
         null, {
         name: 'stocks',
-        displayKey: 'company_name',
-        source: stocks.ttAdapter()
+        displayKey: 'name',
+        source: contacts.ttAdapter()
     }).on('typeahead:selected', function(event, data){            
         $('.typeahead').val(data.code); 
         console.log(data);
