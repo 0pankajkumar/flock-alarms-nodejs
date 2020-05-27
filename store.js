@@ -76,18 +76,3 @@ exports.allAlarms = function () {
     return db.alarms;
 };
 
-exports.getAllFriends = (currentToken) => {
-    https.get('https://api.flock.co/v1/roster.listContacts?token='+currentToken, (resp) => {
-        let data = "";
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
-        resp.on('end', () => {
-            let ans = JSON.parse(data).explanation;
-            console.log(ans);
-            return ans;
-        });
-    }).on("error", (err) => {
-      console.log("Errorrrrrrrrrrrrrrrrr: " + err.message);
-    });
-};
