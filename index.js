@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 app.use(flock.events.tokenVerifier);
 app.post('/events', flock.events.listener);
 
-app.get('/getWebpage' (req, res) => {
+app.get('/getWebpage', (req, res) => {
     res.set('Content-Type', 'text/html');
     var body = Mustache.render(listTemplate, { alarms: '' });
     res.send(body);
