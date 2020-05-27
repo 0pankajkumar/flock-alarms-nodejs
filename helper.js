@@ -3,7 +3,7 @@
 var axios = require('axios');
 
 // Get JSON of all contact names
-function getContacts(token){
+exports.getContacts = function (token){
 	 var url = 'https://api.flock.co/v1/roster.listContacts?token=' + token;
 
 	 return new Promise((resolve, reject) => {
@@ -29,5 +29,5 @@ function getContacts(token){
 	 });
 }
 
-export default getContacts;
+// export default getContacts;
 // getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
