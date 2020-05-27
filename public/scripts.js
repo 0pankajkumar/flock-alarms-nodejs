@@ -21,11 +21,11 @@
 //         },
 //      ];
 
-var contactsData = () => {
-    let rawData = fetch('/getContacts')
-    .then(response => response.json());
+var async contactsData = () => {
+    let rawData = await fetch('/getContacts');
+    //.then(response => response.json());
 
-    return rawData;
+    return rawData.json();
 }
 
 console.log("Length of data array ", contactsData.length);
