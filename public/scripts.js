@@ -22,10 +22,17 @@
 //      ];
 
 var contactsData = () => {
-    let rawData = fetch('/getContacts');
-    //.then(response => response.json());
+    let rawData;
+    $.get("/getContacts", function(data, status){
+        rawData = data;
+      });
 
     return rawData;
+
+    // let rawData = fetch('/getContacts');
+    //.then(response => response.json());
+
+    // return rawData;
 }
 
 console.log("Length of data array ", contactsData.length);
