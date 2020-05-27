@@ -17,7 +17,7 @@ exports.getContacts = (token) => {
 	  		profileImage: x.profileImage
 	  	};
 	  });
-	  return ans;
+	  return [{status : 'yippee'}];
 	  console.log("Length of ans ", ans.length);
 
 	})).catch(error => {
