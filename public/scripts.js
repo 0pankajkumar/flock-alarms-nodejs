@@ -24,6 +24,7 @@
 var contactsData = () => {
     let rawData;
     $.get("/getContacts", function(data, status){
+        console.log(`We received ${data.length} with ${status} but`);
         rawData = data;
       });
 
