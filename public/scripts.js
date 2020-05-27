@@ -21,8 +21,8 @@
 //         },
 //      ];
 
-var async contactsData = () => {
-    let rawData = await fetch('/getContacts');
+var contactsData = () => {
+    let rawData = fetch('/getContacts');
     //.then(response => response.json());
 
     return rawData.json();
