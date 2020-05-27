@@ -44,5 +44,5 @@ var contacts = new Bloodhound({
     }).on('typeahead:selected', function(event, data){            
         $('.typeahead').val(data.code); 
         console.log(data);
-        document.getElementById('sltd').innerHTML = data.code;
+        document.getElementById('sltd').innerHTML = data.id;
     });
