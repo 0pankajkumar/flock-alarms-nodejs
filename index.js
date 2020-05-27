@@ -37,7 +37,7 @@ app.get('/getContacts', (req, res) => {
     // var body = helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
     // res.send(JSON.stringify(body));
     helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886')
-    .then(data => res,send(JSON.stringify(data)));
+    .then(data => res.send(JSON.stringify(data)));
 });
 
 
