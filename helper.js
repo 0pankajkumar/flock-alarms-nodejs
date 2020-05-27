@@ -3,7 +3,7 @@
 var axios = require('axios');
 
 // Get JSON of all contact names
-exports.getContacts = async function(token){
+async function getContacts(token){
 	 var url = 'https://api.flock.co/v1/roster.listContacts?token=' + token;
 	 
 	//  axios.all([
@@ -27,5 +27,5 @@ exports.getContacts = async function(token){
 	  return {status : 'yippee'};
 }
 
-
+export default getContacts;
 // getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');
