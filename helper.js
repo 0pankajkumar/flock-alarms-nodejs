@@ -18,7 +18,7 @@ exports.getContacts = (token) => {
 	  	};
 	  });
 	  return ans;
-	  // console.log(ans);
+	  console.log("Length of ans ", ans.length);
 
 	})).catch(error => {
 	  console.log(error);
