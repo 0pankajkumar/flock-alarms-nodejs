@@ -21,6 +21,7 @@
 //         },
 //      ];
 
+/*
 var contactsData = () => {
     var rawData;
 
@@ -43,10 +44,12 @@ var contactsData = () => {
 
 console.log("Length of data array ", contactsData.length);
 
+*/
+
 var contacts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: contactsData
+        prefetch: '/getContacts'
     });
 
     contacts.initialize();
@@ -64,11 +67,11 @@ var contacts = new Bloodhound({
     
 
 
-contactsData
-.done(() => {
-    contacts.add(contactsData);
-})
-.fail(() => {
-    console.log("failed to initiizae Bloodhound");
-});
+// contactsData
+// .done(() => {
+//     contacts.add(contactsData);
+// })
+// .fail(() => {
+//     console.log("failed to initiizae Bloodhound");
+// });
 
