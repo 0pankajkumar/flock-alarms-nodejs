@@ -41,13 +41,11 @@ var contactsData = () => {
 }
 
 console.log("Length of data array ", contactsData.length);
-    
-contactsData
-.done((processedData) => {
-    var contacts = new Bloodhound({
+
+var contacts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: processedData
+        local: contactsData
     });
 
     contacts.initialize();
@@ -62,7 +60,12 @@ contactsData
         console.log(data);
         document.getElementById('sltd').innerHTML = data.id;
     });
+    
 
+
+contactsData
+.done(() => {
+    contacts.add(contactsData);
 })
 .fail(() => {
     console.log("failed to initiizae Bloodhound");
