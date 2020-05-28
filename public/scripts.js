@@ -27,6 +27,7 @@ var contactsData = () => {
     return new Promise((accept, reject) => {
         $.get("/getContacts", function(data, status){
             console.log(`We received ${data.length} with ${status} but`);
+            console.log(data);
             accept(JSON.parse(data));
           }).catch(error => {
               console.log(error);
