@@ -17,7 +17,10 @@
     {{/alarms.length}}
 
     <input class="typeahead" />
-    <div id="sltd"></div>
+    <input id="datetime" type="datetime-local" name="mytime" placeholder="Select Date time">
+    <input id="msg" type="text" />
+    <button id="trigger"></button>
+    <div id="sltd" style="display: hidden"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="typeahead-min.js" crossorigin="anonymous"></script>
