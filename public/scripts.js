@@ -1,50 +1,3 @@
-// var stocksData = [
-//         {
-//             "company_name": "Facebook",
-//             "code": "fb",
-//         },
-//         {
-//             "company_name": "Google",
-//             "code": "goog",
-//         },
-//         {
-//             "company_name": "Yahoo",
-//             "code": "yhoo",
-//         },
-//         {
-//             "company_name": "Apple",
-//             "code": "aapl",
-//         },
-//         {
-//             "company_name": "Royal Mail",
-//             "code": "rmg.l",
-//         },
-//      ];
-
-/*
-var contactsData = () => {
-    var rawData;
-
-    return new Promise((accept, reject) => {
-        $.get("/getContacts", function(data, status){
-            console.log(`We received ${data.length} with ${status} but`);
-            console.log(data);
-            accept(JSON.parse(data));
-          }).catch(error => {
-              console.log(error);
-              reject(error);
-        });
-    });
-
-    // let rawData = fetch('/getContacts');
-    //.then(response => response.json());
-
-    // return rawData;
-}
-
-console.log("Length of data array ", contactsData.length);
-
-*/
 
 var contacts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -66,12 +19,4 @@ var contacts = new Bloodhound({
     });
     
 
-
-// contactsData
-// .done(() => {
-//     contacts.add(contactsData);
-// })
-// .fail(() => {
-//     console.log("failed to initiizae Bloodhound");
-// });
 
