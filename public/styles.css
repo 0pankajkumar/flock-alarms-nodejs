@@ -93,6 +93,27 @@ p + p {
   border: 2px solid #0097cf;
 }
 
+.inputBox {
+  width: 396px;
+  height: 30px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.inputBox {
+  background-color: #fff;
+}
+
+.inputBox:focus {
+  border: 2px solid #0097cf;
+}
+
 .tt-query {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);

@@ -20,7 +20,7 @@ $('.typeahead').typeahead(
     
 
 $('#trigger').click(() => {
-    let user = $('#sltd').val();
+    let user = document.getElementById('sltd').innerHTML;
     let datetime = $('#datetime').val();
     let msg = $('#msg').val();
 
