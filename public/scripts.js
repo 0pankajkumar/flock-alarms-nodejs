@@ -42,7 +42,9 @@ var contactsData = () => {
 
 console.log("Length of data array ", contactsData.length);
     
-var contacts = new Bloodhound({
+contactsData
+.done(() => {
+    var contacts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         local: contactsData
@@ -60,3 +62,9 @@ var contacts = new Bloodhound({
         console.log(data);
         document.getElementById('sltd').innerHTML = data.id;
     });
+
+})
+.fail(() => {
+    console.log("failed to initiizae Bloodhound");
+});
+
