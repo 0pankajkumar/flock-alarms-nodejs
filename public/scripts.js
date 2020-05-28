@@ -22,13 +22,17 @@
 //      ];
 
 var contactsData = () => {
-    let rawData;
-    $.get("/getContacts", function(data, status){
-        console.log(`We received ${data.length} with ${status} but`);
-        rawData = data;
-      });
+    var rawData;
 
-    return JSON.parse(rawData);
+    return new Promise((accept, reject) => {
+        $.get("/getContacts", function(data, status){
+            console.log(`We received ${data.length} with ${status} but`);
+            accept(JSON.parse(data));
+          }).catch(error => {
+              console.log(error);
+              reject(error);
+        });
+    });
 
     // let rawData = fetch('/getContacts');
     //.then(response => response.json());

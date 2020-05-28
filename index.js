@@ -45,13 +45,6 @@ app.get('/getContacts', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
 app.listen(process.env.PORT || 8080, function () {
     console.log('Listening on 8080');
 });
