@@ -43,11 +43,11 @@ var contactsData = () => {
 console.log("Length of data array ", contactsData.length);
     
 contactsData
-.done(() => {
+.done((processedData) => {
     var contacts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: contactsData
+        local: processedData
     });
 
     contacts.initialize();
