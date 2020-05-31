@@ -71,7 +71,8 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 
 app.get('/submitAlaramRequest', (req, res) => {
-   console.log('POST data', req.param);
+   console.log('GET data', req.params);
+   res.send('Yo we love it');
    var r = parseDate(req.param('theDate'));
     console.log('parse result', r);
     if (r) {
@@ -83,8 +84,10 @@ app.get('/submitAlaramRequest', (req, res) => {
         console.log('adding alarm', alarm);
         addAlarm(alarm);
         // callback(null, { text: 'Alarm added' });
+        res.send('submitted');
     } else {
         // callback(null, { text: 'Alarm time not specified' });
+        res.send('submission failed ');
     } 
 });
 
