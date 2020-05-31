@@ -104,7 +104,7 @@ var scheduleAlarm = function (alarm) {
 };
 
 // schedule all alarms saved in db
-store.allAlarms().forEach(scheduleAlarm);
+// store.allAlarms().forEach(scheduleAlarm);
 
 var sendAlarm = function (alarm) {
     flock.chat.sendMessage(config.botToken || process.env.botToken, {
