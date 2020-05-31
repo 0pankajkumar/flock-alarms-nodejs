@@ -71,14 +71,13 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 
 app.get('/submitAlaramRequest', (req, res) => {
-   // console.log('GET data', req);
-   // res.send(`Yo we love it $(req)`);
+
    var r = parseDate(req.query.theDate);
     console.log('parse result', r);
     if (r) {
         var alarm = {
             userId: req.query.userId,
-            time: r.date.getTime(),
+            time: r,
             msg: req.query.msg.slice(r.end).trim()
         };
         console.log('adding alarm', alarm);
@@ -92,16 +91,19 @@ app.get('/submitAlaramRequest', (req, res) => {
 });
 
 var parseDate = function (text) {
-    var r = chrono.parse(text);
-    if (r && r.length > 0) {
-        return {
-            date: r[0].start.date(),
-            start: r[0].index,
-            end: r[0].index + r[0].text.length
-        };
-    } else {
-        return null;
-    }
+
+    return Date.parse(text);
+
+    // var r = chrono.parse(text);
+    // if (r && r.length > 0) {
+    //     return {
+    //         date: r[0].start.date(),
+    //         start: r[0].index,
+    //         end: r[0].index + r[0].text.length
+    //     };
+    // } else {
+    //     return null;
+    // }
 };
 
 var addAlarm = function (alarm) {
