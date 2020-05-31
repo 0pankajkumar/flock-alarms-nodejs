@@ -9,6 +9,11 @@ var fs = require('fs');
 var util = require('util');
 var helper = require('./helper');
 
+// For Parsing post request
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
 
@@ -63,15 +68,15 @@ flock.events.on('app.uninstall', function (event, callback) {
 });
 
 
-app.post('/submitAlaramRequest', (req, res) => {
-   console.log('POST data', req.body);
-   var r = parseDate(req.body.theDate);
+app.get('/submitAlaramRequest', (req, res) => {
+   console.log('POST data', req.params);
+   var r = parseDate(req.params.theDate);
     console.log('parse result', r);
     if (r) {
         var alarm = {
-            userId: req.body.userId,
+            userId: req.params.userId,
             time: r.date.getTime(),
-            msg: req.body.msg.slice(r.end).trim()
+            msg: req.params.msg.slice(r.end).trim()
         };
         console.log('adding alarm', alarm);
         addAlarm(alarm);
