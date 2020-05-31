@@ -19,6 +19,7 @@ exports.saveToken = function (userId, token) {
    		if(err){
    			throw err;
    		}
+   		console.log('Creating user', response);
    	});
 };
 
@@ -28,6 +29,7 @@ exports.deleteToken = function (userId) {
    		if(err){
    			throw err;
    		}
+   		console.log('Deleting user', response);
    	});
 };
 
