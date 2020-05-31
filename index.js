@@ -50,7 +50,12 @@ app.listen(process.env.PORT || 8080, function () {
 });
 
 flock.events.on('app.install', function (event, callback) {
-    store.saveToken(event.userId, event.token);
+    store2.saveToken(event.userId, event.token);
+    callback();
+});
+
+flock.events.on('app.uninstall', function (event, callback) {
+    store2.deleteToken(event.userId, event.token);
     callback();
 });
 

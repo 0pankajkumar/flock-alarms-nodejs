@@ -1,18 +1,77 @@
+//Connecting to postgres on heroku
 const { Client } = require('pg');
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  ssl: true,
 });
 
 client.connect();
 
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
+
+// Accessors
+
+// saves newly registered users
+exports.saveToken = function (userId, token) {
+    // db.users[userId] = token;
+
+   	client.query('INSERT INTO public.flock_users(userid, flock_token) VALUES($1, $2)', [userid, token], (err,response) => {
+   		if(err){
+   			throw err;
+   		}
+   	});
+};
+
+// Removes all user info from db as he is going away
+exports.deleteToken = function (userId) {
+   	client.query('DELETE FROM public.flock_users WHERE userid=$1', [userid], (err,response) => {
+   		if(err){
+   			throw err;
+   		}
+   	});
+};
+
+
+// gets token of a registered user
+exports.getToken = function (userId) {
+    // return db.users[userId];
+};
+
+
+exports.peekAlarm = function () {
+    // if (db.alarms.length > 0) {
+    //     return db.alarms[0];
+    // } else {
+    //     return null;
+    // }
+};
+
+// Deletes a sent meaasge
+exports.removeAlarm = function (alarm) {
+    // var index = db.alarms.indexOf(alarm);
+    // if (index !== -1) {
+    //     db.alarms.splice(index, 1);
+    // }
+};
+
+// Saves a message to be sent
+exports.addAlarm = function (alarm) {
+    // var alarms = db.alarms;
+    // var insertAt = Math.max(0, alarms.findIndex(function (x) {
+    //     return alarm.time < x.time;
+    // }));
+    // alarms.splice(insertAt, 0, alarm);
+};
+
+// Sends back all meesages of a particular user just for viewing
+exports.userAlarms = function (userId) {
+    // return db.alarms.filter(function (alarm) {
+    //     return alarm.userId === userId;
+    // });
+};
+
+// Send back all alarams of all users
+exports.allAlarms = function () {
+    // return db.alarms;
+};
+
