@@ -64,6 +64,7 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 
 app.post('/submitAlaramRequest', (req, res) => {
+   console.log('POST data', req.params);
    var r = parseDate(req.params.theDate);
     console.log('parse result', r);
     if (r) {
