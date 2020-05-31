@@ -6,16 +6,13 @@ const client = new Client({
   // ssl: true,
 });
 
-function initiateConnectionToDB(client) {
-	client.connect(err => {
+client.connect(err => {
 	  if (err) {
 	    console.error('database connection error', err.stack)
 	  } else {
 	    console.log('database connected')
 	  }
 	});
-}
-
 
 
 // Accessors
@@ -23,26 +20,24 @@ function initiateConnectionToDB(client) {
 // saves newly registered users
 exports.saveToken = function (userId, token) {
     // db.users[userId] = token;
-    initiateConnectionToDB(client);
    	client.query('INSERT INTO public.flock_users(userid, flock_token) VALUES($1, $2)', [userId, token], (err,response) => {
    		if(err){
    			throw err;
    		}
    		console.log('Creating user', response);
    	});
-   	client.end()
+   	// client.end()
 };
 
 // Removes all user info from db as he is going away
 exports.deleteToken = function (userId) {
-	initiateConnectionToDB(client);
    	client.query('DELETE FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
    		if(err){
    			throw err;
    		}
    		console.log('Deleting user', response);
    	});
-   	client.end()
+   	// client.end()
 };
 
 
