@@ -24,7 +24,7 @@ exports.saveToken = function (userId, token) {
    		if(err){
    			throw err;
    		}
-   		console.log('Creating user', response.rowCount > 0 ? 'succeded' : 'failed');
+   		console.log('Creating user', response.rowCount > 0 ? 'succeeded' : 'failed');
    	});
    	// client.end()
 };
@@ -35,7 +35,7 @@ exports.deleteToken = function (userId) {
    		if(err){
    			throw err;
    		}
-   		console.log('Deleting user', response.rowCount > 0 ? 'succeded' : 'failed');
+   		console.log('Deleting user', response.rowCount > 0 ? 'succeeded' : 'failed');
    	});
    	// client.end()
 };
@@ -44,22 +44,32 @@ exports.deleteToken = function (userId) {
 // gets token of a registered user
 exports.getToken = function (userId) {
     // return db.users[userId];
-    client.query('DELETE FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
+    client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
    		if(err){
    			throw err;
    		}
-   		console.log('Deleting user');
+   		console.log('Got user token from DB & returned back for evaluation');
    	});
 };
 
 
-exports.peekAlarm = function () {
-    // if (db.alarms.length > 0) {
-    //     return db.alarms[0];
-    // } else {
-    //     return null;
-    // }
+// Saves a message to be sent
+exports.addAlarm = function (alarm) {
+    // var alarms = db.alarms;
+    // var insertAt = Math.max(0, alarms.findIndex(function (x) {
+    //     return alarm.time < x.time;
+    // }));
+    // alarms.splice(insertAt, 0, alarm);
+
+    client.query('INSERT INTO public.postman(userid, msg, datetime_to_hit) VALUES($1, $2, $3)', 
+    	[alarm.userId, alarm.msg, alarm.time], (err, response) => {
+    	if(err){
+    		throw err;
+    	}
+    	console.log('Alarm addition ', response.rowCount > 0 ? 'succeeded' : 'failed');
+    });
 };
+
 
 // Deletes a sent meaasge
 exports.removeAlarm = function (alarm) {
@@ -69,14 +79,7 @@ exports.removeAlarm = function (alarm) {
     // }
 };
 
-// Saves a message to be sent
-exports.addAlarm = function (alarm) {
-    // var alarms = db.alarms;
-    // var insertAt = Math.max(0, alarms.findIndex(function (x) {
-    //     return alarm.time < x.time;
-    // }));
-    // alarms.splice(insertAt, 0, alarm);
-};
+
 
 // Sends back all meesages of a particular user just for viewing
 exports.userAlarms = function (userId) {

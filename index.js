@@ -62,21 +62,22 @@ flock.events.on('app.uninstall', function (event, callback) {
     callback();
 });
 
-flock.events.on('client.slashCommand', function (event, callback) {
-    var r = parseDate(event.text);
+
+app.post('/submitAlaramRequest', (req, res) => {
+   var r = parseDate(req.params.theDate);
     console.log('parse result', r);
     if (r) {
         var alarm = {
-            userId: event.userId,
+            userId: req.params.userId,
             time: r.date.getTime(),
-            text: event.text.slice(r.end).trim()
+            msg: req.params.msg.slice(r.end).trim()
         };
         console.log('adding alarm', alarm);
         addAlarm(alarm);
         callback(null, { text: 'Alarm added' });
     } else {
         callback(null, { text: 'Alarm time not specified' });
-    }
+    } 
 });
 
 var parseDate = function (text) {
@@ -93,7 +94,7 @@ var parseDate = function (text) {
 };
 
 var addAlarm = function (alarm) {
-    store.addAlarm(alarm);
+    store2.addAlarm(alarm);
     scheduleAlarm(alarm);
 };
 
@@ -134,46 +135,3 @@ app.get('/list', function (req, res) {
     res.send(body);
 });
 
-flock.events.on('client.messageAction', function (event, callback) {
-    var messages = event.messages;
-    if (!(messages && messages.length > 0)) {
-        console.log('chat', event.chat);
-        console.log('uids', event.messageUids);
-        console.log('token', store.getToken(event.userId));
-        flock.chat.fetchMessages(store.getToken(event.userId), {
-            chat: event.chat,
-            uids: event.messageUids
-        }, function (error, messages) {
-            if (error) {
-                console.warn('Got error');
-                callback(error);
-            } else {
-                setAlarms(messages);
-            }
-        });
-    } else {
-        setAlarms(messages);
-    }
-    var setAlarms = function (messages) {
-        var alarms = messages.map(function (message) {
-            var parsed = parseDate(message.text);
-            if (parsed) {
-                return {
-                    userId: event.userId,
-                    time: parsed.date.getTime(),
-                    text: util.format('In %s: %s', event.chatName, message.text)
-                }
-            } else {
-                return null;
-            }
-        }).filter(function (alarm) {
-            return alarm !== null;
-        });
-        if (alarms.length > 0) {
-            alarms.forEach(addAlarm);
-            callback(null, { text: util.format('%d alarm(s) added', alarms.length) });
-        } else {
-            callback(null, { text: 'No alarms found' });
-        }
-    };
-});
