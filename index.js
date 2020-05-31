@@ -74,9 +74,9 @@ app.post('/submitAlaramRequest', (req, res) => {
         };
         console.log('adding alarm', alarm);
         addAlarm(alarm);
-        callback(null, { text: 'Alarm added' });
+        // callback(null, { text: 'Alarm added' });
     } else {
-        callback(null, { text: 'Alarm time not specified' });
+        // callback(null, { text: 'Alarm time not specified' });
     } 
 });
 
