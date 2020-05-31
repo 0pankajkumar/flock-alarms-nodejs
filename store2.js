@@ -24,7 +24,7 @@ exports.saveToken = function (userId, token) {
    		if(err){
    			throw err;
    		}
-   		console.log('Creating user', response);
+   		console.log('Creating user', response.rowCount > 0 ? 'succeded' : 'failed');
    	});
    	// client.end()
 };
@@ -35,7 +35,7 @@ exports.deleteToken = function (userId) {
    		if(err){
    			throw err;
    		}
-   		console.log('Deleting user', response);
+   		console.log('Deleting user', response.rowCount > 0 ? 'succeded' : 'failed');
    	});
    	// client.end()
 };
@@ -44,6 +44,12 @@ exports.deleteToken = function (userId) {
 // gets token of a registered user
 exports.getToken = function (userId) {
     // return db.users[userId];
+    client.query('DELETE FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
+   		if(err){
+   			throw err;
+   		}
+   		console.log('Deleting user');
+   	});
 };
 
 
