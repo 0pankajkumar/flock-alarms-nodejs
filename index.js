@@ -44,7 +44,7 @@ app.get('/getContacts', (req, res) => {
     res.set('Content-Type', 'application/json');
 
     try{
-        var getData = helper.getContacts('76e5d594-9b7c-465d-bd19-8d43e675c886');        
+        var getData = helper.getContacts('d980962a-1754-4f52-88b3-3a8ee699f816');        
         getData.then(d => res.send(JSON.stringify(d)));
     }
     catch(e){
