@@ -10,10 +10,6 @@ var util = require('util');
 var helper = require('./helper');
 var cors = require('cors')
 
-// For Parsing post request
-// var bodyParser = require('body-parser');
-// app.use(bodyParser.json()); // support json encoded bodies
-// app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
@@ -45,7 +41,9 @@ app.get('/getContacts', (req, res) => {
 
     try{
         var getData = helper.getContacts('d980962a-1754-4f52-88b3-3a8ee699f816');        
-        getData.then(d => res.send(JSON.stringify(d)));
+        getData.then(d => {
+            console.log('The length of records is ', d.length);
+            res.send(JSON.stringify(d))});
     }
     catch(e){
         res.send('some error occured :(');
