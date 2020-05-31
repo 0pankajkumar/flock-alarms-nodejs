@@ -11,9 +11,9 @@ var helper = require('./helper');
 var cors = require('cors')
 
 // For Parsing post request
-var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+// var bodyParser = require('body-parser');
+// app.use(bodyParser.json()); // support json encoded bodies
+// app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
