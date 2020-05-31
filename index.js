@@ -71,14 +71,14 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 
 app.get('/submitAlaramRequest', (req, res) => {
-   console.log('POST data', req.params);
-   var r = parseDate(req.params('theDate'));
+   console.log('POST data', req.param);
+   var r = parseDate(req.param('theDate'));
     console.log('parse result', r);
     if (r) {
         var alarm = {
-            userId: req.params('userId'),
+            userId: req.param('userId'),
             time: r.date.getTime(),
-            msg: req.params('msg').slice(r.end).trim()
+            msg: req.param('msg').slice(r.end).trim()
         };
         console.log('adding alarm', alarm);
         addAlarm(alarm);
