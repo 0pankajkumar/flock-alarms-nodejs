@@ -92,8 +92,7 @@ app.get('/submitAlaramRequest', (req, res) => {
 
 var parseDate = function (text) {
     console.log('Received this for parsing into date', text);
-    return new Date();
-    return Date.parse(text);
+    return new Date(Date.parse(text));
 
     // var r = chrono.parse(text);
     // if (r && r.length > 0) {
