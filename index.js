@@ -71,8 +71,8 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 
 app.get('/submitAlaramRequest', (req, res) => {
-   console.log('GET data', req.params);
-   res.send('Yo we love it');
+   console.log('GET data', req.params.length);
+   res.send(`Yo we love it $(req)`);
    // var r = parseDate(req.param('theDate'));
    //  console.log('parse result', r);
    //  if (r) {
