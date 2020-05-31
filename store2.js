@@ -6,7 +6,13 @@ const client = new Client({
   ssl: true,
 });
 
-client.connect();
+client.connect(err => {
+  if (err) {
+    console.error('database connection error', err.stack)
+  } else {
+    console.log('database connected')
+  }
+});
 
 
 // Accessors
