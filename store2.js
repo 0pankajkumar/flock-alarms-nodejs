@@ -24,7 +24,7 @@ exports.saveToken = function (userId, token) {
 
 // Removes all user info from db as he is going away
 exports.deleteToken = function (userId) {
-   	client.query('DELETE FROM public.flock_users WHERE userid=$1', [userid], (err,response) => {
+   	client.query('DELETE FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
    		if(err){
    			throw err;
    		}
