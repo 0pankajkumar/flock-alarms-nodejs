@@ -8,6 +8,7 @@ var Mustache = require('mustache');
 var fs = require('fs');
 var util = require('util');
 var helper = require('./helper');
+var cors = require('cors')
 
 // For Parsing post request
 var bodyParser = require('body-parser');
@@ -18,6 +19,7 @@ flock.appId = config.appId || process.env.appId;
 flock.appSecret = config.appSecret || process.env.appSecret;
 
 var app = express();
+app.use(cors())
 // var router = express.Router();
 
 var cors = require('cors');
