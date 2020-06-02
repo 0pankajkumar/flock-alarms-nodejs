@@ -91,7 +91,7 @@ flock.events.on('app.uninstall', function (event, callback) {
 
 app.get('/submitAlarmRequest', (req, res) => {
 
-   var r = parseDate(req.query.theDate);
+   var r = parseDate(req.query.timeOfSend);
     console.log('parse result', r);
     if (r) {
         var alarm = {
