@@ -31,7 +31,10 @@ app.post('/events', flock.events.listener);
 app.use(express.static('public'));
 
 app.get('/getWebpage', (req, res) => {
-    var event = JSON.parse(req.query.flockEvent);
+    var event = null;
+    if(req.query.flockEvent){
+        JSON.parse(req.query.flockEvent);
+    }
 
     var alarms;
     if(event){
