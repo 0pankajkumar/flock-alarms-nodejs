@@ -31,8 +31,24 @@ app.post('/events', flock.events.listener);
 app.use(express.static('public'));
 
 app.get('/getWebpage', (req, res) => {
+    var event = JSON.parse(req.query.flockEvent);
+
+    var alarms;
+    if(event){
+        alarms = store2.userAlarms(event.userId).map(function (alarm) {
+            return {
+                msg: alarm.msg,
+                timeString: new Date(alarm.timeOfSending).toLocaleString(),
+                toid: alarm.toid
+            }
+        });
+    }
+    else{
+        alarms = '';
+    }
+
     res.set('Content-Type', 'text/html');
-    var body = Mustache.render(listTemplate, { alarms: '' });
+    var body = Mustache.render(listTemplate, { alarms: alarms });
     res.send(body);
 });
 
@@ -74,8 +90,9 @@ app.get('/submitAlaramRequest', (req, res) => {
     console.log('parse result', r);
     if (r) {
         var alarm = {
-            userId: req.query.userId,
-            time: r,
+            fromid: req.query.fromid,
+            toid: req.query.toid,
+            timeOfSending: r,
             msg: req.query.msg.slice(r.end).trim()
         };
         console.log('adding alarm', alarm);
@@ -90,18 +107,7 @@ app.get('/submitAlaramRequest', (req, res) => {
 
 var parseDate = function (text) {
     console.log('Received this for parsing into date', text);
-    return new Date(Date.parse(text));
-
-    // var r = chrono.parse(text);
-    // if (r && r.length > 0) {
-    //     return {
-    //         date: r[0].start.date(),
-    //         start: r[0].index,
-    //         end: r[0].index + r[0].text.length
-    //     };
-    // } else {
-    //     return null;
-    // }
+    return new Date(Date.parse(text));  
 };
 
 var addAlarm = function (alarm) {
@@ -110,10 +116,10 @@ var addAlarm = function (alarm) {
 };
 
 var scheduleAlarm = function (alarm) {
-    var delay = Math.max(0, alarm.time - new Date().getTime());
+    var delay = Math.max(0, alarm.timeOfSending - new Date().getTime());
     setTimeout(function () {
         sendAlarm(alarm);
-        store.removeAlarm(alarm);
+        store2.removeAlarm(alarm);
     }, delay);
 };
 
@@ -121,9 +127,9 @@ var scheduleAlarm = function (alarm) {
 // store.allAlarms().forEach(scheduleAlarm);
 
 var sendAlarm = function (alarm) {
-    flock.chat.sendMessage(config.botToken || process.env.botToken, {
-        to: alarm.userId,
-        text: alarm.text
+    flock.chat.sendMessage(alarm.fromid, {
+        to: alarm.toid,
+        text: alarm.msg
     });
 };
 

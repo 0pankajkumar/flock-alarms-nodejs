@@ -61,8 +61,8 @@ exports.addAlarm = function (alarm) {
     // }));
     // alarms.splice(insertAt, 0, alarm);
 
-    client.query('INSERT INTO public.postman(userid, msg, datetime_to_hit) VALUES($1, $2, $3::timestamp with time zone)', 
-    	[alarm.userId, alarm.msg, alarm.time], (err, response) => {
+    client.query('INSERT INTO public.postman(toid, fromid, msg, timeOfSending) VALUES($1, $2, 3, $4::timestamp with time zone)', 
+    	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending], (err, response) => {
     	if(err){
     		throw err;
     	}
@@ -77,6 +77,14 @@ exports.removeAlarm = function (alarm) {
     // if (index !== -1) {
     //     db.alarms.splice(index, 1);
     // }
+
+    client.query('DELETE FROM public.postman WHERE toid=$1 and fromid=$2 and msg=$3', 
+    	[alarm.toid, alarm.fromid, alarm.msg], (err, response) => {
+    	if(err){
+    		throw err;
+    	}
+    	console.log('Alarm deletion ', response.rowCount > 0 ? 'succeeded' : 'failed');
+    });
 };
 
 
@@ -86,6 +94,19 @@ exports.userAlarms = function (userId) {
     // return db.alarms.filter(function (alarm) {
     //     return alarm.userId === userId;
     // });
+
+    client.query('SELECT * FROM public.postman WHERE fromid=$1', [userId], (err, res) => {
+    	if(err){
+    		throw err;
+    	}
+    	return res.rows.map(ele => {
+    		return {
+    			toid: ele.toid,
+    			msg: ele.msg,
+    			timeOfSending: ele.timeOfSending
+    		};
+    	});
+    });
 };
 
 // Send back all alarams of all users
