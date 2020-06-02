@@ -23,6 +23,11 @@ $('#trigger').click(() => {
     let user = document.getElementById('sltd').innerHTML;
     let datetime = $('#datetime').val();
     let msg = $('#msg').val();
+    let fromid = $('#fromid').val();
 
     console.log(user, datetime, msg);
+
+    $.get("/submitAlarmRequest", {toid: user, fromid: fromid, timeOfSend: datetime, msg: msg}, () => {
+        document.getElementById('verdict').innerHTML = 'Submitted';
+    });
 });

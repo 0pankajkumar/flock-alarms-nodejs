@@ -32,6 +32,7 @@ app.use(express.static('public'));
 
 app.get('/getWebpage', (req, res) => {
     var event = null;
+    var fromid = null;
     if(req.query.flockEvent){
         JSON.parse(req.query.flockEvent);
     }
@@ -42,7 +43,8 @@ app.get('/getWebpage', (req, res) => {
             return {
                 msg: alarm.msg,
                 timeString: new Date(alarm.timeOfSending).toLocaleString(),
-                toid: alarm.toid
+                toid: alarm.toid,
+                fromid: event.userId
             }
         });
     }
@@ -87,7 +89,7 @@ flock.events.on('app.uninstall', function (event, callback) {
 });
 
 
-app.get('/submitAlaramRequest', (req, res) => {
+app.get('/submitAlarmRequest', (req, res) => {
 
    var r = parseDate(req.query.theDate);
     console.log('parse result', r);
