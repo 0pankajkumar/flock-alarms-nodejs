@@ -61,25 +61,22 @@ exports.addAlarm = function (alarm) {
     // }));
     // alarms.splice(insertAt, 0, alarm);
 
-    let ans = null;
-    client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
-    	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending], (err, response) => {
-    	if(err){
-    		throw err;
-    	}
-    	// console.log('Row',response.rows[0].idx,'added successfully');
-    	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
-    	ans = response.rows[0].idx;
-    })
-    .then(return ans);
+    return new Promise((resolve, reject) => {
+    	client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
+	    	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending], (err, response) => {
+	    	if(err){
+	    		reject(err);
+	    		// throw err;
+	    	}
+	    	// console.log('Row',response.rows[0].idx,'added successfully');
+	    	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
+	    	resolve(response.rows[0].idx);
+	    });
 
- //    try{
- //    	const res = await client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
- //    	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending]);
- //    	return res.rows[0].idx;
- //    } catch (err) {
-	//   console.log(err.stack)
-	// }
+    });
+
+
+    
 };
 
 
