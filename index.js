@@ -125,7 +125,7 @@ var addAlarm = function (alarm) {
     // idx is the Row number of added record in db
     store2.addAlarm(alarm).then((res) => {
         console.log('in addAlarm we received', res);
-        scheduleAlarm(alarm, idx);
+        scheduleAlarm(alarm, res);
     }, (err) => console.log(err));
 };
 
