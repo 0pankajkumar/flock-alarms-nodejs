@@ -118,17 +118,17 @@ var parseDate = function (text) {
 };
 
 var addAlarm = function (alarm) {
-    store2.addAlarm(alarm);
-    scheduleAlarm(alarm);
+    let idx = store2.addAlarm(alarm); // idx is the Row number of added record in db
+    scheduleAlarm(alarm, idx);
 };
 
-var scheduleAlarm = function (alarm) {
+var scheduleAlarm = function (alarm, idx) {
     console.log('Scheduling alarm task');
     console.log('Time difference is like this', alarm.timeOfSending,' minus ', new Date().getTime(), alarm.timeOfSending - new Date().getTime());
     var delay = Math.max(0, alarm.timeOfSending - new Date().getTime());
     setTimeout(function () {
         sendAlarm(alarm);
-        store2.removeAlarm(alarm);
+        store2.removeAlarm(alarm, idx);
     }, delay);
 };
 

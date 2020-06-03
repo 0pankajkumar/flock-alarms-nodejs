@@ -66,21 +66,22 @@ exports.addAlarm = function (alarm) {
     	if(err){
     		throw err;
     	}
-    	console.log('Row',response.rows[0].idx,'added successfully');
+    	// console.log('Row',response.rows[0].idx,'added successfully');
     	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
+    	return response.rows[0].idx;
     });
 };
 
 
 // Deletes a sent meaasge
-exports.removeAlarm = function (alarm) {
+exports.removeAlarm = function (alarm, idx) {
     // var index = db.alarms.indexOf(alarm);
     // if (index !== -1) {
     //     db.alarms.splice(index, 1);
     // }
 
-    client.query('DELETE FROM public.postman WHERE toid=$1 and fromid=$2 and msg=$3', 
-    	[alarm.toid, alarm.fromid, alarm.msg], (err, response) => {
+    client.query('DELETE FROM public.postman WHERE idx=$1', 
+    	[idx], (err, response) => {
     	if(err){
     		throw err;
     	}
