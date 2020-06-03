@@ -70,8 +70,8 @@ exports.addAlarm = function (alarm) {
     	// console.log('Row',response.rows[0].idx,'added successfully');
     	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
     	ans = response.rows[0].idx;
-    });
-    return ans;
+    })
+    .then(return ans);
 
  //    try{
  //    	const res = await client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
