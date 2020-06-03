@@ -72,7 +72,7 @@ exports.addAlarm = function (alarm) {
     // });
 
     try{
-    	const res = client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
+    	const res = await client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
     	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending]);
     	return res.rows[0].idx;
     } catch (err) {
