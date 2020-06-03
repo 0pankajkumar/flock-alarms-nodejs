@@ -112,7 +112,9 @@ app.get('/submitAlarmRequest', (req, res) => {
 
 var parseDate = function (text) {
     console.log('Received this for parsing into date', text);
-    return new Date(Date.parse(text));  
+    let d = new Date(0);
+    return d.setUTCSeconds(text);
+    // return new Date(Date.parse(text));  
 };
 
 var addAlarm = function (alarm) {

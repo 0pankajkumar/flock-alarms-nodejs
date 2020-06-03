@@ -21,7 +21,7 @@ $('.typeahead').typeahead(
 
 $('#trigger').click(() => {
     let user = document.getElementById('sltd').innerHTML;
-    let datetime = $('#datetime').val();
+    let datetime = Date.parse($('#datetime').val());
     let msg = $('#msg').val();
     let fromid = $('#fromid').val();
 
