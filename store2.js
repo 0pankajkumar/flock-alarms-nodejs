@@ -80,6 +80,7 @@ exports.removeAlarm = function (alarm, idx) {
     //     db.alarms.splice(index, 1);
     // }
 
+    console.log('we received this',idx,'id for removing');
     client.query('DELETE FROM public.postman WHERE idx=$1', 
     	[idx], (err, response) => {
     	if(err){
