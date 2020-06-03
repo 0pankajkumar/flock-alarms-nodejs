@@ -118,9 +118,15 @@ var parseDate = function (text) {
 };
 
 var addAlarm = function (alarm) {
-    let idx = store2.addAlarm(alarm); // idx is the Row number of added record in db
-    console.log('in addAlarm we received', idx);
-    scheduleAlarm(alarm, idx);
+    // let idx = store2.addAlarm(alarm); // idx is the Row number of added record in db
+    // console.log('in addAlarm we received', idx);
+    // scheduleAlarm(alarm, idx);
+
+    // idx is the Row number of added record in db
+    store2.addAlarm(alarm).then((res) => {
+        console.log('in addAlarm we received', res);
+        scheduleAlarm(alarm, idx);
+    }, (err) => console.log(err));
 };
 
 var scheduleAlarm = function (alarm, idx) {
