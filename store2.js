@@ -61,7 +61,7 @@ exports.addAlarm = function (alarm) {
     // }));
     // alarms.splice(insertAt, 0, alarm);
 
-    client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4))', 
+    client.query('INSERT INTO public.postman(toid, fromid, msg, timeofsending) VALUES($1, $2, $3, to_timestamp($4)) RETURNING idx', 
     	[alarm.toid, alarm.fromid, alarm.msg, alarm.timeOfSending], (err, response) => {
     	if(err){
     		throw err;
