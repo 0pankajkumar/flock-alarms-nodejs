@@ -121,6 +121,8 @@ var addAlarm = function (alarm) {
 };
 
 var scheduleAlarm = function (alarm) {
+    console.log('Scheduling alarm task');
+    console.log('Time difference is like this', alarm.timeOfSending - new Date().getTime());
     var delay = Math.max(0, alarm.timeOfSending - new Date().getTime());
     setTimeout(function () {
         sendAlarm(alarm);
