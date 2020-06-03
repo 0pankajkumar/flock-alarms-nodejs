@@ -66,7 +66,8 @@ exports.addAlarm = function (alarm) {
     	if(err){
     		throw err;
     	}
-    	console.log('Alarm addition ', response.rowCount > 0 ? 'succeeded' : 'failed');
+    	console.log(response);
+    	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
     });
 };
 
@@ -83,7 +84,7 @@ exports.removeAlarm = function (alarm) {
     	if(err){
     		throw err;
     	}
-    	console.log('Alarm deletion ', response.rowCount > 0 ? 'succeeded' : 'failed');
+    	console.log('Alarm deletion', response.rowCount > 0 ? 'succeeded' : 'failed');
     });
 };
 
