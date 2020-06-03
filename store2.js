@@ -66,7 +66,7 @@ exports.addAlarm = function (alarm) {
     	if(err){
     		throw err;
     	}
-    	console.log(response);
+    	console.log('Row',response.rows[0].idx,'added successfully');
     	console.log('Alarm addition', response.rowCount > 0 ? 'succeeded' : 'failed');
     });
 };
