@@ -55,7 +55,7 @@ app.get('/getWebpage', (req, res) => {
     }
 
     res.set('Content-Type', 'text/html');
-    var body = Mustache.render(listTemplate, { alarms: alarms });
+    var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId });
     res.send(body);
 });
 
