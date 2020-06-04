@@ -37,6 +37,8 @@ app.get('/getWebpage', (req, res) => {
     //     event = JSON.parse(req.query.flockEvent);
     // }
 
+    console.log('the events object',events);
+
     var alarms;
     if(event){
         alarms = store2.userAlarms(event.userId).map(function (alarm) {
