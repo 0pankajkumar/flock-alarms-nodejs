@@ -43,6 +43,7 @@ exports.deleteToken = function (userId) {
 
 // gets token of a registered user
 exports.getToken = function (userId) {
+	console.log('received this iser id for getToken', userId);
     // return db.users[userId];
     client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
    		if(err){
