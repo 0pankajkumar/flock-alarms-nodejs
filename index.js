@@ -117,6 +117,7 @@ app.get('/submitAlarmRequest', (req, res) => {
             res.send('submission failed ');
         }
 
+    });
      
 });
 
