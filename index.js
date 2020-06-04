@@ -146,6 +146,7 @@ var scheduleAlarm = function (alarm, idx) {
 // store.allAlarms().forEach(scheduleAlarm);
 
 var sendAlarm = function (alarm) {
+    console.log('prepping for sendig message with', alarm);
     flock.chat.sendMessage(alarm.fromid, {
         to: alarm.toid,
         text: alarm.msg
