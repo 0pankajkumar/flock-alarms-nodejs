@@ -9,6 +9,7 @@ var fs = require('fs');
 var util = require('util');
 var helper = require('./helper');
 var cors = require('cors')
+var axios = require('axios');
 
 
 flock.appId = config.appId || process.env.appId;
@@ -96,12 +97,16 @@ app.get('/submitAlarmRequest', (req, res) => {
    var r = parseDate(req.query.timeOfSend);
     console.log('Seeing all repsonse queries', req.query);
     console.log('parse result', r);
+
+    let token = store2.getToken(req.query.fromid);
+
     if (r) {
         var alarm = {
             fromid: req.query.fromid,
             toid: req.query.toid,
             timeOfSending: r,
-            msg: req.query.msg.slice(r.end).trim()
+            msg: req.query.msg.slice(r.end).trim(),
+            token: token
         };
         console.log('adding alarm', alarm);
         addAlarm(alarm);
@@ -147,10 +152,30 @@ var scheduleAlarm = function (alarm, idx) {
 
 var sendAlarm = function (alarm) {
     console.log('prepping for sendig message with', alarm);
-    flock.chat.sendMessage(alarm.fromid, {
-        to: alarm.toid,
-        text: alarm.msg
-    });
+
+    axios.get('https://api.flock.co/v1/chat.sendMessage', {
+        params: {
+          to : alarm.toid,
+          text: alarm.msg,
+          token: alarm.token
+        }
+      })
+    .then(function (response) {
+        console.log('Done sending probably',response);
+      })
+      .catch(function (error) {
+        console.log('Sending failed mostly', error);
+      })
+      .then(function () {
+        // always executed
+        console.log('We tried sending');
+      });  
+
+
+    // flock.chat.sendMessage(alarm.fromid, {
+    //     to: alarm.toid,
+    //     text: alarm.msg
+    // });
 };
 
 var listTemplate = fs.readFileSync('list.mustache.html', 'utf8');
