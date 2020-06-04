@@ -37,7 +37,7 @@ app.get('/getWebpage', (req, res) => {
     //     event = JSON.parse(req.query.flockEvent);
     // }
 
-    console.log('the events object',events);
+    console.log('the events object',event);
 
     var alarms;
     if(event){
