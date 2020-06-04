@@ -23,7 +23,7 @@ $('#trigger').click(() => {
     let user = document.getElementById('sltd').innerHTML;
     let datetime = Date.parse($('#datetime').val());
     let msg = $('#msg').val();
-    let fromid = $('#fromid').val();
+    let fromid = document.getElementById('fromid').innerHTML;
 
     console.log(user, datetime, msg);
 
