@@ -98,24 +98,27 @@ app.get('/submitAlarmRequest', (req, res) => {
     console.log('Seeing all repsonse queries', req.query);
     console.log('parse result', r);
 
-    let token = store2.getToken(req.query.fromid);
+    let token = store2.getToken(req.query.fromid)
+    .then(
+        if (r) {
+            var alarm = {
+                fromid: req.query.fromid,
+                toid: req.query.toid,
+                timeOfSending: r,
+                msg: req.query.msg.slice(r.end).trim(),
+                token: token
+            };
+            console.log('adding alarm', alarm);
+            addAlarm(alarm);
+            // callback(null, { text: 'Alarm added' });
+            res.send('submitted');
+        } else {
+            // callback(null, { text: 'Alarm time not specified' });
+            res.send('submission failed ');
+        }
+    );
 
-    if (r) {
-        var alarm = {
-            fromid: req.query.fromid,
-            toid: req.query.toid,
-            timeOfSending: r,
-            msg: req.query.msg.slice(r.end).trim(),
-            token: token
-        };
-        console.log('adding alarm', alarm);
-        addAlarm(alarm);
-        // callback(null, { text: 'Alarm added' });
-        res.send('submitted');
-    } else {
-        // callback(null, { text: 'Alarm time not specified' });
-        res.send('submission failed ');
-    } 
+     
 });
 
 var parseDate = function (text) {
