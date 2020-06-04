@@ -153,23 +153,23 @@ var scheduleAlarm = function (alarm, idx) {
 var sendAlarm = function (alarm) {
     console.log('prepping for sendig message with', alarm);
 
-    // axios.get('https://api.flock.co/v1/chat.sendMessage', {
-    //     params: {
-    //       to : alarm.toid,
-    //       text: alarm.msg,
-    //       token: alarm.token
-    //     }
-    //   })
-    // .then(function (response) {
-    //     console.log('Done sending probably',response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log('Sending failed mostly', error);
-    //   })
-    //   .then(function () {
-    //     // always executed
-    //     console.log('We tried sending');
-    //   });  
+    axios.get('https://api.flock.co/v1/chat.sendMessage', {
+        params: {
+          to : alarm.toid,
+          text: alarm.msg,
+          token: alarm.token
+        }
+      })
+    .then(function (response) {
+        console.log('Done sending probably',response);
+      })
+      .catch(function (error) {
+        console.log('Sending failed mostly', error);
+      })
+      .then(function () {
+        // always executed
+        console.log('We tried sending');
+      });  
 
 
     // flock.chat.sendMessage(alarm.fromid, {
