@@ -31,11 +31,11 @@ app.post('/events', flock.events.listener);
 app.use(express.static('public'));
 
 app.get('/getWebpage', (req, res) => {
-    var event = null;
+    var event = JSON.parse(req.query.flockEvent);
     var fromid = null;
-    if(req.query.flockEvent){
-        event = JSON.parse(req.query.flockEvent);
-    }
+    // if(req.query.flockEvent){
+    //     event = JSON.parse(req.query.flockEvent);
+    // }
 
     var alarms;
     if(event){
