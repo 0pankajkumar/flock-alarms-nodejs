@@ -46,17 +46,22 @@ exports.getToken = function (userId) {
 	console.log('received this iser id for getToken', userId);
     // return db.users[userId];
 
-    return new Promise((resolve, reject) => {
+    var ans = 'blank-token';
+    let pro = new Promise((resolve, reject) => {
     	client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
 	   		if(err){
 	   			reject(err);
 	   			// throw err;
 	   		}
 	   		console.log('Got user token from DB & returned back for evaluation');
+	   		ans = response.rows[0].flock_token;
 	   		resolve(response.rows[0].flock_token);
 	   	});
 
     });
+
+    await pro;
+    return ans;
     
 };
 
