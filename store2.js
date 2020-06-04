@@ -47,7 +47,7 @@ exports.getToken = function (userId) {
     // return db.users[userId];
 
     var ans = 'blank-token';
-    let pro = new Promise((resolve, reject) => {
+    let async pro = new Promise((resolve, reject) => {
     	client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
 	   		if(err){
 	   			reject(err);
