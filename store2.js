@@ -45,12 +45,19 @@ exports.deleteToken = function (userId) {
 exports.getToken = function (userId) {
 	console.log('received this iser id for getToken', userId);
     // return db.users[userId];
-    client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
-   		if(err){
-   			throw err;
-   		}
-   		console.log('Got user token from DB & returned back for evaluation');
-   	});
+
+    return new Promise((resolve, reject) => {
+    	client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
+	   		if(err){
+	   			reject(err);
+	   			// throw err;
+	   		}
+	   		console.log('Got user token from DB & returned back for evaluation');
+	   		resolve(response.rows[0]);
+	   	});
+
+    });
+    
 };
 
 
