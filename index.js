@@ -40,7 +40,7 @@ app.get('/getWebpage', (req, res) => {
     console.log('the events object',event);
 
     var alarms;
-    if(event){
+    try{
         alarms = store2.userAlarms(event.userId).map(function (alarm) {
             return {
                 msg: alarm.msg,
@@ -50,8 +50,8 @@ app.get('/getWebpage', (req, res) => {
             }
         });
     }
-    else{
-        alarms = '';
+    catch(e){
+        alarms = {fromid: event.userId};
     }
 
     res.set('Content-Type', 'text/html');
