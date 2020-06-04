@@ -53,7 +53,7 @@ exports.getToken = function (userId) {
 	   			// throw err;
 	   		}
 	   		console.log('Got user token from DB & returned back for evaluation');
-	   		resolve(response.rows[0]);
+	   		resolve(response.rows[0].flock_token);
 	   	});
 
     });
