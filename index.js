@@ -98,8 +98,8 @@ app.get('/submitAlarmRequest', (req, res) => {
     console.log('Seeing all repsonse queries', req.query);
     console.log('parse result', r);
 
-    let token = store2.getToken(req.query.fromid)
-    .then(
+    store2.getToken(req.query.fromid)
+    .then((token) = {
         if (r) {
             var alarm = {
                 fromid: req.query.fromid,
@@ -116,7 +116,6 @@ app.get('/submitAlarmRequest', (req, res) => {
             // callback(null, { text: 'Alarm time not specified' });
             res.send('submission failed ');
         }
-    );
 
      
 });
