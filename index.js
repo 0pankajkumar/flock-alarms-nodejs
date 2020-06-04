@@ -99,35 +99,23 @@ app.get('/submitAlarmRequest', (req, res) => {
     console.log('parse result', r);
 
     store2.getToken(req.query.fromid)
-    .then((token) = {
-        var alarm = {
+    .then((token) => {
+        if (r) {
+            var alarm = {
                 fromid: req.query.fromid,
                 toid: req.query.toid,
                 timeOfSending: r,
                 msg: req.query.msg.slice(r.end).trim(),
                 token: token
             };
-        console.log('adding alarm', alarm);
-        addAlarm(alarm);
-        // callback(null, { text: 'Alarm added' });
-        res.send('submitted');
-
-        // if (r) {
-        //     var alarm = {
-        //         fromid: req.query.fromid,
-        //         toid: req.query.toid,
-        //         timeOfSending: r,
-        //         msg: req.query.msg.slice(r.end).trim(),
-        //         token: token
-        //     };
-        //     console.log('adding alarm', alarm);
-        //     addAlarm(alarm);
-        //     // callback(null, { text: 'Alarm added' });
-        //     res.send('submitted');
-        // } else {
-        //     // callback(null, { text: 'Alarm time not specified' });
-        //     res.send('submission failed ');
-        // }
+            console.log('adding alarm', alarm);
+            addAlarm(alarm);
+            // callback(null, { text: 'Alarm added' });
+            res.send('submitted');
+        } else {
+            // callback(null, { text: 'Alarm time not specified' });
+            res.send('submission failed ');
+        }
 
      
 });
