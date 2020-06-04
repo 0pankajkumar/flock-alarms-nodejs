@@ -63,7 +63,7 @@ app.get('/getContacts', (req, res) => {
     res.set('Content-Type', 'application/json');
 
     try{
-        var getData = helper.getContacts('d980962a-1754-4f52-88b3-3a8ee699f816');        
+        var getData = helper.getContacts('c863e11b-d1bf-4ce0-afb9-b29e847f6152');        
         getData.then(d => {
             console.log('The length of records is ', d.length);
             res.send(JSON.stringify(d))});
