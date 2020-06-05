@@ -117,7 +117,7 @@ flock.events.on('app.uninstall', function (event, callback) {
 });
 
 
-app.get('/submitAlarmRequest', (req, res) => {
+app.get('/submitAlarmRequest', (req, res, callback) => {
 
    var r = parseDate(req.query.timeOfSend);
     console.log('Seeing all repsonse queries', req.query);
@@ -135,7 +135,7 @@ app.get('/submitAlarmRequest', (req, res) => {
             };
             console.log('adding alarm', alarm);
             addAlarm(alarm);
-            // callback(null, { text: 'Alarm added' });
+            callback(null, { text: 'Sending in the future' });
             res.send('submitted');
         }
     });
