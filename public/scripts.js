@@ -24,12 +24,13 @@ $('#trigger').click(() => {
     let datetime = Date.parse($('#datetime').val());
     let msg = $('#msg').val();
     let fromid = document.getElementById('fromid').innerHTML;
+    let toid = document.getElementById('toid').innerHTML;
     let token = document.getElementById('token').innerHTML;
 
 
     console.log(user, datetime, msg);
 
-    $.get("/submitAlarmRequest", {toid: user, fromid: fromid, timeOfSend: datetime, msg: msg, token: token}, () => {
+    $.get("/submitAlarmRequest", {toid: toid, fromid: fromid, timeOfSend: datetime, msg: msg, token: token}, () => {
         document.getElementById('verdict').innerHTML = 'Submitted for lazy sending';
     });
 });
