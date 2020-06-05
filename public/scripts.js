@@ -20,6 +20,8 @@ $('#trigger').click(() => {
 // Instantiating date 5 minutes ahead from now
 $(document).ready( function() {
 
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
+
     // Hiding data holding parts
     setTimeout((p) => {
         document.getElementById('data-holders').style.visibility = 'hidden';

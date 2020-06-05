@@ -1,6 +1,7 @@
 html {
   overflow-y: scroll;
   *overflow-x: hidden;
+  visibility:hidden;
 }
 
 .container {
