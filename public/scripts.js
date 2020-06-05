@@ -39,7 +39,9 @@ $('#trigger').click(() => {
 $(document).ready( function() {
 
     // Hiding data holding parts
-    document.getElementById('data-holders').style.display = 'hidden';
+    setTimeout((p) => {
+        document.getElementById('data-holders').style.display = 'hidden';
+      }, 500);
 
     var now = new Date();
     var month = (now.getMonth() + 1);               
