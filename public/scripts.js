@@ -37,6 +37,10 @@ $('#trigger').click(() => {
 
 // Instantiating date 5 minutes ahead from now
 $(document).ready( function() {
+
+    // Hiding data holding parts
+    document.getElementById('data-holders').style.display = 'hidden';
+
     var now = new Date();
     var month = (now.getMonth() + 1);               
     var day = now.getDate();
