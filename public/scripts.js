@@ -22,7 +22,7 @@ $(document).ready( function() {
 
     // Hiding data holding parts
     setTimeout((p) => {
-        document.getElementById('data-holders').style.display = 'hidden';
+        document.getElementById('data-holders').style.visibility = 'hidden';
       }, 500);
 
     var now = new Date();
