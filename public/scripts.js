@@ -29,15 +29,17 @@ $(document).ready( function() {
     var month = (now.getMonth() + 1);               
     var day = now.getDate();
     var hrs = now.getHours();
-    var mins = String(now.getMinutes()+5)''
+    var mins = now.getMinutes() + 5;
     if (month < 10) 
         month = "0" + month;
     if (day < 10) 
         day = "0" + day;
     if (hrs < 10)
         hrs = "0" + hrs;
-    if (mins < 10)
+    if (mins < 10){
         mins = "0" + mins;
+        mins = String(mins);
+    }
     var today = now.getFullYear() + '-' + month + '-' + day + 'T' + hrs + ':' + mins;
     $('#datetime').val(today);
 });
