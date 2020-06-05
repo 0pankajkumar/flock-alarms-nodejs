@@ -31,6 +31,17 @@ app.post('/events', flock.events.listener);
 
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+
+    console.log('Couldnt get into comma, thanks cronster!');
+    res.set('Content-Type', 'text/html');
+    var body = '<div><h4>Thanks !</h4><p>for waking me up</p></div>';
+    res.send(body);
+
+});
+
+
+
 app.get('/getWebpage', (req, res) => {
     var event = JSON.parse(req.query.flockEvent);
     var fromid = null;
