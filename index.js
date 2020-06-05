@@ -43,7 +43,7 @@ app.get('/getWebpage', (req, res) => {
     store2.getToken(event.userId)
     .then((token) => {
         res.set('Content-Type', 'text/html');
-        var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId, token:token });
+        var body = Mustache.render(listTemplate, { alarms: '', fromid: event.userId, token:token });
         res.send(body);
     });
 
