@@ -31,3 +31,16 @@ $('#trigger').click(() => {
         document.getElementById('verdict').innerHTML = 'Submitted';
     });
 });
+
+// Instantiating date 5 minutes ahead from now
+$(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);               
+    var day = now.getDate();
+    if (month < 10) 
+        month = "0" + month;
+    if (day < 10) 
+        day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day + 'T' + now.getHours() + ':' + String(now.getMinutes()+5);
+    $('#datetime').val(today);
+});
