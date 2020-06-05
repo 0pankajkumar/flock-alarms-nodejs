@@ -23,7 +23,7 @@ $(document).ready( function() {
     // Hiding data holding parts
     setTimeout((p) => {
         document.getElementById('data-holders').style.visibility = 'hidden';
-      }, 500);
+      }, 10);
 
     var now = new Date();
     var month = (now.getMonth() + 1);               
