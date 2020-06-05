@@ -2,7 +2,7 @@
 var contacts = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: '/getContacts'
+    prefetch: '/'
 });
 
 contacts.initialize();
