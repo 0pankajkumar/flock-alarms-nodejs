@@ -13,10 +13,10 @@
     </ul>
     {{/alarms.length}}
     {{^alarms.length}}
-    <p>No alarms set</p>
+    <p style="display:hidden">No alarms set</p>
     {{/alarms.length}}
-    <div id="fromid">{{fromid}}</div>
-    <div id="toid">{{toid}}</div>
+    <div id="fromid" style="display:hidden">{{fromid}}</div>
+    <div id="toid" style="display:hidden">{{toid}}</div>
 
     <input class="typeahead" />
     <input id="datetime" class="inputBox" type="datetime-local" name="mytime" placeholder="Select Date time">
@@ -25,7 +25,7 @@
 
     <div id="verdict"></div>
     <div id="sltd" style="display:hidden"></div>
-    <div id="token">{{token}}</div>
+    <div id="token" style="display:hidden">{{token}}</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="typeahead-min.js" crossorigin="anonymous"></script>
