@@ -136,7 +136,7 @@ app.get('/submitAlarmRequest', (req, res, callback) => {
             console.log('adding alarm', alarm);
             addAlarm(alarm);
             callback(null, { text: 'Sending in the future' });
-            res.send('submitted');
+            // res.send('submitted');
         }
     });
     
