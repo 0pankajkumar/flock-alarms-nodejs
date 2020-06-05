@@ -201,10 +201,10 @@ var sendAlarm = function (alarm) {
         }
       })
     .then(function (response) {
-        console.log('Done sending probably',response);
+        console.log('Done sending probably');
       })
       .catch(function (error) {
-        console.log('Sending failed mostly', error);
+        console.log('Sending failed mostly');
       })
       .then(function () {
         // always executed
