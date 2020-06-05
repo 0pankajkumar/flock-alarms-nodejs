@@ -40,24 +40,38 @@ app.get('/getWebpage', (req, res) => {
 
     console.log('the events object',event);
 
-    var alarms;
-    try{
-        alarms = store2.userAlarms(event.userId).map(function (alarm) {
-            return {
-                msg: alarm.msg,
-                timeString: new Date(alarm.timeOfSending).toLocaleString(),
-                toid: alarm.toid,
-                fromid: event.userId
-            }
-        });
-    }
-    catch(e){
-        alarms = {fromid: event.userId};
-    }
+    store2.getToken(event.userId)
+    .then((token) => {
+        res.set('Content-Type', 'text/html');
+        var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId. token:token });
+        res.send(body);
+    });
 
-    res.set('Content-Type', 'text/html');
-    var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId });
-    res.send(body);
+
+
+
+
+
+
+
+    // var alarms;
+    // try{
+    //     alarms = store2.userAlarms(event.userId).map(function (alarm) {
+    //         return {
+    //             msg: alarm.msg,
+    //             timeString: new Date(alarm.timeOfSending).toLocaleString(),
+    //             toid: alarm.toid,
+    //             fromid: event.userId
+    //         }
+    //     });
+    // }
+    // catch(e){
+    //     alarms = {fromid: event.userId};
+    // }
+
+    // res.set('Content-Type', 'text/html');
+    // var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId });
+    // res.send(body);
 });
 
 app.get('/getContacts', (req, res) => {
@@ -112,12 +126,35 @@ app.get('/submitAlarmRequest', (req, res) => {
             addAlarm(alarm);
             // callback(null, { text: 'Alarm added' });
             res.send('submitted');
-        } else {
-            // callback(null, { text: 'Alarm time not specified' });
-            res.send('submission failed ');
         }
-
     });
+    
+
+
+
+
+
+
+    // store2.getToken(req.query.fromid)
+    // .then((token) => {
+    //     if (r) {
+    //         var alarm = {
+    //             fromid: req.query.fromid,
+    //             toid: req.query.toid,
+    //             timeOfSending: r,
+    //             msg: req.query.msg.slice(r.end).trim(),
+    //             token: token
+    //         };
+    //         console.log('adding alarm', alarm);
+    //         addAlarm(alarm);
+    //         // callback(null, { text: 'Alarm added' });
+    //         res.send('submitted');
+    //     } else {
+    //         // callback(null, { text: 'Alarm time not specified' });
+    //         res.send('submission failed ');
+    //     }
+
+    // });
      
 });
 
