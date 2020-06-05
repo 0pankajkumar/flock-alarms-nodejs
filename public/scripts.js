@@ -15,6 +15,8 @@ $('#trigger').click(() => {
     $.get("/submitAlarmRequest", {toid: toid, fromid: fromid, timeOfSend: datetime, msg: msg, token: token}, () => {
         document.getElementById('verdict').innerHTML = 'Submitted for lazy sending';
     });
+
+    flock.close();
 });
 
 // Instantiating date 5 minutes ahead from now
