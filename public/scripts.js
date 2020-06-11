@@ -12,7 +12,7 @@ $('#trigger').click(() => {
 
     console.log(user, datetime, msg);
 
-    $.get("/submitAlarmRequest", {toid: toid, fromid: fromid, timeOfSend: datetime, msg: msg, token: token}, () => {
+    $.get("/submitAlarmRequest", {toid: toid, fromid: fromid, timeOfSend: datetime, msg: msg, token: token}, (data, status) => {
         document.getElementById('verdict').innerHTML = 'Submitted for lazy sending';
         flock.close();
     });
