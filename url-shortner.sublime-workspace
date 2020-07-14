@@ -1,0 +1,1022 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"borde",
+				"border-radius\tproperty"
+			],
+			[
+				"chat",
+				"chatName"
+			],
+			[
+				"al",
+				"alarms"
+			],
+			[
+				"getT",
+				"getToken"
+			],
+			[
+				"send",
+				"sending"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"res",
+				"resolve"
+			],
+			[
+				"use",
+				"userId"
+			],
+			[
+				"ala",
+				"alarm"
+			],
+			[
+				"user",
+				"userid"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"stock",
+				"stocksData"
+			],
+			[
+				"get",
+				"getContacts"
+			],
+			[
+				"st",
+				"stringDeletion"
+			],
+			[
+				"p",
+				"prefix"
+			],
+			[
+				"des",
+				"dest"
+			],
+			[
+				"ans",
+				"ansList"
+			],
+			[
+				"pa",
+				"parentBank"
+			],
+			[
+				"tre",
+				"treeToList"
+			],
+			[
+				"tree",
+				"treeToList"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"aux",
+				"auxStack"
+			],
+			[
+				"au",
+				"auxStack"
+			],
+			[
+				"my",
+				"myStack"
+			],
+			[
+				"e",
+				"empty"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"reve",
+				"reverseBank"
+			],
+			[
+				"cou",
+				"countsList"
+			],
+			[
+				"kt",
+				"kth_most"
+			],
+			[
+				"c",
+				"counterBank"
+			],
+			[
+				"pr",
+				"printLL"
+			],
+			[
+				"par",
+				"part1start"
+			],
+			[
+				"part",
+				"part2start"
+			],
+			[
+				"print",
+				"printLL"
+			],
+			[
+				"ne",
+				"nextt"
+			],
+			[
+				"sta",
+				"startt"
+			],
+			[
+				"pri",
+				"printLL"
+			],
+			[
+				"next",
+				"nextt"
+			],
+			[
+				"copy",
+				"copyLL2"
+			],
+			[
+				"new",
+				"newLL"
+			],
+			[
+				"be",
+				"beginning"
+			],
+			[
+				"fo",
+				"found"
+			],
+			[
+				"arr",
+				"arr1"
+			],
+			[
+				"de",
+				"depthFirstSearch"
+			],
+			[
+				"th",
+				"thirteen"
+			],
+			[
+				"tw",
+				"twelve"
+			],
+			[
+				"el",
+				"eleven"
+			],
+			[
+				"te",
+				"target"
+			],
+			[
+				"two",
+				"two2"
+			],
+			[
+				"cp",
+				"copyLL"
+			],
+			[
+				"wild",
+				"wildNext"
+			],
+			[
+				"wi",
+				"wildNext"
+			],
+			[
+				"tr",
+				"truncated_digits"
+			],
+			[
+				"re",
+				"req_su"
+			],
+			[
+				"one",
+				"one2"
+			],
+			[
+				"lo",
+				"longestCon"
+			],
+			[
+				"pu",
+				"put_nowait"
+			],
+			[
+				"ma",
+				"max"
+			],
+			[
+				"heap",
+				"heappush"
+			],
+			[
+				"max",
+				"maximum"
+			],
+			[
+				"in",
+				"inorderIterative33"
+			],
+			[
+				"min",
+				"minCoins22"
+			],
+			[
+				"prin",
+				"printReverse"
+			],
+			[
+				"find",
+				"findLeft"
+			],
+			[
+				"vis",
+				"visitedSet"
+			],
+			[
+				"bank",
+				"bank1"
+			],
+			[
+				"ban",
+				"bank1"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"ge",
+				"generatePossi"
+			],
+			[
+				"a",
+				"arr"
+			],
+			[
+				"m",
+				"mini"
+			],
+			[
+				"co",
+				"continuos"
+			],
+			[
+				"to",
+				"topo"
+			],
+			[
+				"No",
+				"None"
+			],
+			[
+				"los",
+				"listOfStacks"
+			],
+			[
+				"ar",
+				"arrayNumber"
+			],
+			[
+				"psu",
+				"pushAtI"
+			],
+			[
+				"lis",
+				"listOfStacks"
+			],
+			[
+				"Sta",
+				"StackBuilder"
+			],
+			[
+				"list",
+				"listNumber"
+			],
+			[
+				"merg",
+				"mergeKArrays"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"un",
+				"unordered_set"
+			],
+			[
+				"usin",
+				"usingSet"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"try",
+				"tryAutoUpload"
+			],
+			[
+				"b",
+				"bscored"
+			],
+			[
+				"do",
+				"downloadClicked"
+			],
+			[
+				"posting",
+				"postingTeam"
+			],
+			[
+				"postingT",
+				"postingTitle"
+			],
+			[
+				"dup",
+				"duplicateFound"
+			],
+			[
+				"all",
+				"allUsernames"
+			],
+			[
+				"db",
+				"dbDataStarting"
+			],
+			[
+				"ope",
+				"openShareDialog"
+			],
+			[
+				"file",
+				"filterName"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"from",
+				"fromDate"
+			],
+			[
+				"form",
+				"formatDatesPlease"
+			],
+			[
+				"dic",
+				"dictToBeReturned"
+			],
+			[
+				"pos",
+				"postingArchiveStatus"
+			],
+			[
+				"se",
+				"selectedCustomFilter"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"fil",
+				"filterNamePlease"
+			],
+			[
+				"profil",
+				"profileArchiveStatus"
+			],
+			[
+				"company",
+				"companyName"
+			],
+			[
+				"dbD",
+				"dbData"
+			],
+			[
+				"du",
+				"duplicateFound"
+			],
+			[
+				"insert",
+				"insert_one"
+			],
+			[
+				"custom",
+				"customFilters"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"retr",
+				"return"
+			],
+			[
+				"filter",
+				"filterName"
+			],
+			[
+				"profi",
+				"profileArchiveStatus"
+			],
+			[
+				"compan",
+				"companyName"
+			],
+			[
+				"rec",
+				"recruiter"
+			],
+			[
+				"getE",
+				"getElementById"
+			],
+			[
+				"pro",
+				"promise"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"DF",
+				"DFSCall"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"colla",
+				"collapseToggler"
+			],
+			[
+				"recr",
+				"recruiterScreen"
+			],
+			[
+				"opp",
+				"opponentVisitedIndexes"
+			],
+			[
+				"op",
+				"opponentVisitedIndexes"
+			],
+			[
+				"huma",
+				"humanFoundAgain"
+			],
+			[
+				"go",
+				"goVerti"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/models.py",
+			"settings":
+			{
+				"buffer_size": 275,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/migrations/0002_swigurl_shortcode.py",
+			"settings":
+			{
+				"buffer_size": 505,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/admin.py",
+			"settings":
+			{
+				"buffer_size": 120,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/swig/settings.py",
+			"settings":
+			{
+				"buffer_size": 3125,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ht",
+				"HTMLPrettify"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 185.0,
+		"history":
+		[
+			"a",
+			"a= \"\\2212\"",
+			"\"\\2212\"",
+			"\"\\\\2212\"",
+			"\"\\2212\"",
+			"u'\\2212'",
+			"\\2212",
+			"'\\02795'",
+			"\\02795",
+			"\\u03DC"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/pankaj/Desktop/sandbox/url-shortner-django",
+		"/home/pankaj/Desktop/sandbox/url-shortner-django/src",
+		"/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener",
+		"/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/migrations",
+		"/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/migrations/__pycache__",
+		"/home/pankaj/Desktop/sandbox/url-shortner-django/src/swig"
+	],
+	"file_history":
+	[
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/package.json",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/helper.js",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/public/typeahead-min.js",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/store.js",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/public/styles.css",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/public/scripts.js",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/scripts.js",
+		"/home/pankaj/Desktop/sandbox/flock-alarms-nodejs/list.mustache.html",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/45_autocomplete.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/46_string_deletion.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/16_shortestPath.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/21_tree_to_DLL.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/13_n_stacks.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/30_pallindromes.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/28_sort_stacks.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/29_stack_from_queues.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/14_anagrams.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/43_three_sum.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/33_bigIntMod.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/49_fibonacci_number.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/51_kth_mostFrequent_string.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/48_string_compression.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/44_tree_order.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/41_split_linked_list.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/42_nth_last_element.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/39_random_linkedList.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/18_LowestCommonAncestor.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/40_dedup_linkedList.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/38_linkedList_cycles.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/22_longestConsecutiveBranch.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/24_balancedBinaryTree.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/35_gray_code.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/36_rotate_bits.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/37_ones_in_binary_number.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/34_swap_variables.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/32_two_missing_numbers.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/31_maxStacks.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/25_BST_verification.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/27_inorderTraversal_withoutRecursion.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/26_smallest_change.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/2_knapsack_01.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/23_printReversedLinkedlist.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/12_permutations_of_a_list.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/19_sum.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/17_randomBinaryTree.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/20_reverseStack.py",
+		"/home/pankaj/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/15_buildOrder.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/9_matrixSearch.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/10_mergeArrays.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/11_zeroSum.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/5_consecutive_arrays.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/8_merge_k_arrays.py",
+		"/home/pankaj/.config/sublime-text-3/Packages/User/cpp_input_output.sublime-build",
+		"/home/pankaj/.config/sublime-text-3/Packages/User/competitiveStarter1.sublime-snippet",
+		"/home/pankaj/Documents/cpp/input.txt",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/input.txt",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/271b.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/1283a.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/112A.py",
+		"/home/pankaj/Desktop/secondDash/templates/livePostings.html",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/ZCO12001.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/6_zero_matrix.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/4_find_duplicates.py",
+		"/home/pankaj/Documents/python-scripts/50_questions_byte_by_byte/3_matrix_product.py",
+		"/home/pankaj/Desktop/sandbox/upload/run.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/geeksforgeeks/nearest_multiple_of_10.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/fastModuloExponentiation.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/matbreak.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/stupmach.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/pshot.py",
+		"/home/pankaj/Desktop/secondDash/templates/cover.html",
+		"/home/pankaj/Desktop/secondDash/templates/recruiterLivePostings.html",
+		"/home/pankaj/Desktop/secondDash/templates/recruiterArchivedPostings.html",
+		"/home/pankaj/Desktop/secondDash/templates/archivedPostings.html",
+		"/home/pankaj/Desktop/sandbox/flask/static/style.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/topNavbarStyles.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/customStyle.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/shareCustomFilter.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/dropdownStyles.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/topNavbarStyles2.css",
+		"/home/pankaj/Desktop/secondDash/static/dist/js/customFilters.js",
+		"/home/pankaj/Desktop/secondDash/templates/uploadedSuccessfully.html",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/strno.py",
+		"/home/pankaj/Desktop/secondDash/static/dist/css/snackbar.css",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/input.txt",
+		"/home/pankaj/Desktop/sandbox/js/promise.js",
+		"/home/pankaj/Documents/hugo/blog3/themes/zzo/exampleSite/content/en/posts/test-chartjs.md",
+		"/home/pankaj/Documents/hugo/blog3/themes/zzo/exampleSite/content/en/posts/test-mathjax.md",
+		"/home/pankaj/Documents/hugo/blog3/themes/zzo/exampleSite/content/en/posts/emoji-support.md",
+		"/home/pankaj/Documents/python-scripts/program1.py",
+		"/home/pankaj/Documents/python-scripts/program2.py",
+		"/home/pankaj/Documents/python-scripts/myTree.py",
+		"/home/pankaj/Documents/python-scripts/maps.py",
+		"/home/pankaj/Documents/python-scripts/invertBinaryTree.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/MULTHREE.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/fctrl.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/carsell.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/COVIDLQ.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/error.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/1332a.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/1332c.py",
+		"/home/pankaj/Documents/gkcs/CodeChef User | CodeChef.html",
+		"/home/pankaj/Documents/python-scripts/coinChange.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/996a.py",
+		"/home/pankaj/Documents/python-scripts/depthFirstSearch.py",
+		"/home/pankaj/Documents/python-scripts/dfs_recursive.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codeforces/522a.py",
+		"/home/pankaj/Documents/python-scripts/input.txt",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/giftsrc.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/ENGXOR.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/AIRCNCT.py",
+		"/home/pankaj/Documents/python-scripts/upgrad_interview.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/chefdil.py",
+		"/home/pankaj/Documents/python-scripts/competitiveProgramming/codechef/CAKE1AM.py",
+		"/home/pankaj/Desktop/secondDash/signin/__init__.py",
+		"/home/pankaj/Desktop/secondDash/old_secondDash/user.py",
+		"/home/pankaj/Desktop/secondDash/old_secondDash/templates/login.html",
+		"/home/pankaj/Desktop/secondDash/client/build/index.html",
+		"/home/pankaj/Desktop/secondDash/old_secondDash/__init__.py",
+		"/home/pankaj/Desktop/secondDash/__init__.py",
+		"/home/pankaj/Desktop/secondDash/signin/templates/signin/index.html",
+		"/home/pankaj/Documents/python-scripts/cracking-the-coding-interview/recursion-and-dp/8.9.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/migrations/0002_swigurl_shortcode.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/shortener/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/pankaj/Desktop/sandbox/url-shortner-django/src/swig/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1101,
+								1101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 40.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 150.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "url-shortner.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
