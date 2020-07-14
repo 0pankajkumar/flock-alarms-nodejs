@@ -6,13 +6,23 @@
   </head>
   <body>
     
+    <div class="grid-container">
+        <div>
+            <p style="color: #0abe51">Sending Later to <strong>{{chatName}}</strong></p>
+        </div>
+        <div>
+            <input id="datetime" class="inputBox" type="datetime-local" name="mytime" placeholder="Select Date time">
+        </div>
+        <div>
+            <input id="msg" class="inputBox" type="text" placeholder="Your message" />
+            <br><br>
+        </div>
+        <div>
+            <button id="trigger" class="button button1">Send Later</button>
+        </div>
+        <div></div>
 
-    <p style="color: #0abe51">Sending Later to <strong>{{chatName}}</strong></p>
-    <!-- <input class="typeahead" /> -->
-    <input id="datetime" class="inputBox" type="datetime-local" name="mytime" placeholder="Select Date time">
-    <input id="msg" class="inputBox" type="text" placeholder="Your message" />
-    <br><br>
-    <button id="trigger" class="button button1">Send Later</button>
+    </div>
 
     <div id="data-holders">
         <div id="fromid" style="display:hidden">{{fromid}}</div>
