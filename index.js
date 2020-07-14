@@ -63,7 +63,8 @@ app.get('/getWebpage', (req, res) => {
 
     // let token = await store2.getToken(event.userId);
     let pk = 2;
-    res.send(myfuhn(event.userId));
+    console.log(myfuhn(event.userId));
+    res.send("Under Maintenence");
 
 
 
