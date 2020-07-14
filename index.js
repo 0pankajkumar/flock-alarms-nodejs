@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
 
 });
 
-async function myfuhn(){
-    return await store2.getToken(event.userId);
+async function myfuhn(userId){
+    return await store2.getToken(userId);
 }
 
 app.get('/getWebpage', (req, res) => {
@@ -63,7 +63,7 @@ app.get('/getWebpage', (req, res) => {
 
     // let token = await store2.getToken(event.userId);
     let pk = 2;
-    res.send(myfuhn);
+    res.send(myfuhn(event.userId));
 
 
 
