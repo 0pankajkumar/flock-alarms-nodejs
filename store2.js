@@ -46,20 +46,36 @@ exports.getToken = async function (userId) {
 	console.log('received this iser id for getToken', userId);
     // return db.users[userId];
 
-    return await new Promise((resolve, reject) => {
-    	client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
-	   		if(err){
-	   			reject(err);
-	   			// throw err;
-	   		}
-	   		console.log('Got user token from DB & returned back for evaluation');
-	   		
-	   		resolve(response.rows[0].flock_token);
-	   	});
+  return await new Promise((resolve, reject) => {
+  	client.query('SELECT flock_token FROM public.flock_users WHERE userid=$1', [userId], (err,response) => {
+   		if(err){
+   			reject(err);
+   			// throw err;
+   		}
+   		console.log('Got user token from DB & returned back for evaluation');
+   		
+   		resolve(response.rows[0].flock_token);
+   	});
 
+  });
+};
+
+
+// gets token of a registered user
+exports.getScheduledMessages = async function (userId) {
+  console.log('received this iser id for getScheduledMessages', userId);
+
+  return await new Promise((resolve, reject) => {
+    client.query('SELECT flock_token FROM public.postman WHERE fromid=$1', [userId], (err,response) => {
+      if(err){
+        reject(err);
+      }
+      console.log('Got all the scheduled meesages');
+      
+      resolve(response);
     });
 
-    
+  });
 };
 
 

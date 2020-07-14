@@ -51,12 +51,16 @@ app.get('/getWebpage', (req, res) => {
 
     console.log('the events object',event);
 
-    store2.getToken(event.userId)
-    .then((token) => {
-        res.set('Content-Type', 'text/html');
-        var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
-        res.send(body);
-    });
+    // store2.getToken(event.userId)
+    // .then(return store2.getScheduledMessages(event.userId))
+    // .then((token) => {
+    //     res.set('Content-Type', 'text/html');
+    //     var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
+    //     res.send(body);
+    // });
+
+    let token = await store2.getToken(event.userId);
+    res.send(token);
 
 
 
