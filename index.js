@@ -53,18 +53,18 @@ app.get('/getWebpage', (req, res) => {
 
     console.log('the events object',event);
 
-    // store2.getToken(event.userId)
+    store2.getToken(event.userId)
     // .then(return store2.getScheduledMessages(event.userId))
-    // .then((token) => {
-    //     res.set('Content-Type', 'text/html');
-    //     var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
-    //     res.send(body);
-    // });
+    .then((token) => {
+        res.set('Content-Type', 'text/html');
+        var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
+        res.send(body);
+    });
 
     // let token = await store2.getToken(event.userId);
-    let pk = 2;
-    console.log(myfuhn(event.userId));
-    res.send("Under Maintenence");
+    // let pk = 2;
+    // console.log(myfuhn(event.userId));
+    // res.send("Under Maintenence");
 
 
 
