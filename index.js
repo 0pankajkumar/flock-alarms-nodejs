@@ -40,7 +40,9 @@ app.get('/', (req, res) => {
 
 });
 
-
+async function myfuhn(){
+    return await store2.getToken(event.userId);
+}
 
 app.get('/getWebpage', (req, res) => {
     var event = JSON.parse(req.query.flockEvent);
@@ -59,9 +61,9 @@ app.get('/getWebpage', (req, res) => {
     //     res.send(body);
     // });
 
-    let token = await store2.getToken(event.userId);
+    // let token = await store2.getToken(event.userId);
     let pk = 2;
-    res.send(token);
+    res.send(myfuhn);
 
 
 
