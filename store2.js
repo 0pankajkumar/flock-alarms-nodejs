@@ -62,7 +62,7 @@ exports.getToken = async function (userId) {
 
 
 // gets token of a registered user
-exports.getScheduledMessages = async function (userId) {
+exports.getScheduledMessages = async function (userId, token) {
   console.log('received this iser id for getScheduledMessages', userId);
 
   return await new Promise((resolve, reject) => {
@@ -74,7 +74,7 @@ exports.getScheduledMessages = async function (userId) {
       
     //   resolve(response);
     // });
-         resolve(token, "Yikes");
+         resolve({token, splmsg:"Yikes"});
   });
 };
 
