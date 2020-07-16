@@ -53,12 +53,13 @@ app.get('/getWebpage', (req, res) => {
 
     console.log('the events object',event);
 
-    let test = myfuhn(event.userId);
-    console.log(test);
+    // let test = myfuhn(event.userId);
+    // console.log(test);
 
     store2.getToken(event.userId)
-    // .then(return store2.getScheduledMessages(event.userId))
-    .then((token) => {
+    .then(store2.getScheduledMessages(event.userId))
+    .then((token, splmsg) => {
+        console.log(splmsg);
         res.set('Content-Type', 'text/html');
         var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
         res.send(body);
