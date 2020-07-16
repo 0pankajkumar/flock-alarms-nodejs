@@ -57,8 +57,8 @@ app.get('/getWebpage', (req, res) => {
     // console.log(test);
 
     store2.getToken(event.userId)
-    .then(store2.getScheduledMessages(event.userId, token))
-    .then((token, splmsg) => {
+    .then(store2.getScheduledMessages(event.userId))
+    .then((splmsg) => {
         console.log("My splmsg is ", splmsg);
         res.set('Content-Type', 'text/html');
         var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
