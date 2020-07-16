@@ -53,6 +53,9 @@ app.get('/getWebpage', (req, res) => {
 
     console.log('the events object',event);
 
+    let test = await myfuhn(event.userId);
+    console.log(test);
+
     store2.getToken(event.userId)
     // .then(return store2.getScheduledMessages(event.userId))
     .then((token) => {
