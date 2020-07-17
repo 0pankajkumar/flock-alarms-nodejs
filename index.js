@@ -40,6 +40,10 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/cancelmsg', (req, res) => {
+    let idx = req.query.idx;
+    console.log("received this for deleting", idx);
+});
 
 app.get('/getWebpage', (req, res) => {
     var event = JSON.parse(req.query.flockEvent);
