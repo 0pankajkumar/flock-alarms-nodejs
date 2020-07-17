@@ -227,3 +227,10 @@ p + p {
 .grid-container > div {
   text-align: center;
 }
+
+.messages-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}

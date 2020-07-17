@@ -26,12 +26,16 @@
     </div>
 
     {{#splmsg}}
-    <table style="width: 100%">
+    <div class="messages-list">
+        <div>{{msg}}</div>
+        <div><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+    </div>
+    <!-- <table style="width: 100%">
         <tr>
             <td>{{msg}}</td>
             <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
         </tr>
-    </table>
+    </table> -->
     {{/splmsg}}
 
     <div id="data-holders">
