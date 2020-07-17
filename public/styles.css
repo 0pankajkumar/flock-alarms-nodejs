@@ -234,3 +234,7 @@ p + p {
   grid-gap: 10px;
   padding: 10px;
 }
+
+.hover-pointer {
+  cursor: pointer;
+}

@@ -40,21 +40,12 @@ app.get('/', (req, res) => {
 
 });
 
-async function myfuhn(userId){
-    return await store2.getToken(userId);
-}
 
 app.get('/getWebpage', (req, res) => {
     var event = JSON.parse(req.query.flockEvent);
     var fromid = null;
-    // if(req.query.flockEvent){
-    //     event = JSON.parse(req.query.flockEvent);
-    // }
 
     console.log('the events object',event);
-
-    // let test = myfuhn(event.userId);
-    // console.log(test);
 
     let a = store2.getToken(event.userId);
     let b = store2.getScheduledMessages(event.userId);
@@ -64,15 +55,6 @@ app.get('/getWebpage', (req, res) => {
         var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName, splmsg:splmsg });
         res.send(body);
     });
-
-    // store2.getToken(event.userId)
-    // .then(store2.getScheduledMessages(event.userId))
-    // .then((token, splmsg) => {
-    //     console.log("My splmsg is ", splmsg);
-    //     res.set('Content-Type', 'text/html');
-    //     var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName, splmsg:splmsg });
-    //     res.send(body);
-    // });
 });
 
 app.get('/getContacts', (req, res) => {
