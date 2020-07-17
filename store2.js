@@ -64,7 +64,7 @@ exports.getToken = async function (userId) {
 // gets token of a registered user
 exports.getScheduledMessages = async function (userId, token) {
   console.log('received this iser id for getScheduledMessages', userId);
-
+  var splmsg = "Yikes";
   return await new Promise((resolve, reject) => {
     // client.query('SELECT flock_token FROM public.postman WHERE fromid=$1', [userId], (err,response) => {
     //   if(err){
@@ -74,7 +74,7 @@ exports.getScheduledMessages = async function (userId, token) {
       
     //   resolve(response);
     // });
-         let splmsg = "Yikes";
+
          resolve({splmsg, token});
   });
 };
