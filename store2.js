@@ -74,7 +74,7 @@ exports.getScheduledMessages = async function (userId, token) {
       
     //   resolve(response);
     // });
-         resolve({token, splmsg:"Yikes"});
+         resolve({splmsg:"Yikes", token});
   });
 };
 
