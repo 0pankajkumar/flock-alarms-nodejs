@@ -56,45 +56,22 @@ app.get('/getWebpage', (req, res) => {
     // let test = myfuhn(event.userId);
     // console.log(test);
 
-    store2.getToken(event.userId)
-    .then(store2.getScheduledMessages(event.userId))
-    .then((token, splmsg) => {
-        console.log("My splmsg is ", splmsg);
+    let a = store2.getToken(event.userId);
+    let b = store2.getScheduledMessages(event.userId);
+    return Promise.all([a, b]).then(function([token, splmsg]) {
         res.set('Content-Type', 'text/html');
         var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName, splmsg:splmsg });
         res.send(body);
     });
 
-    // let token = await store2.getToken(event.userId);
-    // let pk = 2;
-    // console.log(myfuhn(event.userId));
-    // res.send("Under Maintenence");
-
-
-
-
-
-
-
-
-    // var alarms;
-    // try{
-    //     alarms = store2.userAlarms(event.userId).map(function (alarm) {
-    //         return {
-    //             msg: alarm.msg,
-    //             timeString: new Date(alarm.timeOfSending).toLocaleString(),
-    //             toid: alarm.toid,
-    //             fromid: event.userId
-    //         }
-    //     });
-    // }
-    // catch(e){
-    //     alarms = {fromid: event.userId};
-    // }
-
-    // res.set('Content-Type', 'text/html');
-    // var body = Mustache.render(listTemplate, { alarms: alarms, fromid: event.userId });
-    // res.send(body);
+    // store2.getToken(event.userId)
+    // .then(store2.getScheduledMessages(event.userId))
+    // .then((token, splmsg) => {
+    //     console.log("My splmsg is ", splmsg);
+    //     res.set('Content-Type', 'text/html');
+    //     var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName, splmsg:splmsg });
+    //     res.send(body);
+    // });
 });
 
 app.get('/getContacts', (req, res) => {
