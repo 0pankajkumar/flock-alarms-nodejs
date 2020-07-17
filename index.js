@@ -43,6 +43,8 @@ app.get('/', (req, res) => {
 app.get('/cancelmsg', (req, res) => {
     let idx = req.query.idx;
     console.log("received this for deleting", idx);
+    store2.cancelmsg(idx)
+    .then(res.send("deleted"));
 });
 
 app.get('/getWebpage', (req, res) => {
