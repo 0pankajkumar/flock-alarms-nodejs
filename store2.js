@@ -60,6 +60,18 @@ exports.getToken = async function (userId) {
   });
 };
 
+exports.cancelmsg = async function (idx) {
+  return await new Promise((resolve, reject) => {
+    client.query('DELETE FROM public.postman WHERE idx=$1', [idx], (err,response) => {
+      if(err){
+        reject(err);
+      }
+      console.log('Deleted', index);
+      
+      resolve("Deleted");
+    });
+  });
+};
 
 // gets token of a registered user
 exports.getScheduledMessages = async function (userId, token) {
