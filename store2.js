@@ -72,7 +72,7 @@ exports.getScheduledMessages = async function (userId, token) {
       }
       console.log('Got all the scheduled meesages');
       
-      resolve(response);
+      resolve(response.rows);
     });
 
          // resolve(splmsg);
