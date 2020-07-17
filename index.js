@@ -61,7 +61,7 @@ app.get('/getWebpage', (req, res) => {
     .then((token, splmsg) => {
         console.log("My splmsg is ", splmsg);
         res.set('Content-Type', 'text/html');
-        var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName });
+        var body = Mustache.render(listTemplate, { alarms:'', toid: event.chat, fromid: event.userId, token:token, chatName: event.chatName, splmsg:splmsg });
         res.send(body);
     });
 
