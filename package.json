@@ -13,7 +13,7 @@
     "axios": "^0.19.2",
     "chrono-node": "^1.2.5",
     "cors": "^2.8.5",
-    "express": "^4.14.1",
+    "express": "^4.17.3",
     "flockos": "0.0.6",
     "mustache": "^2.3.0",
     "pg": "^8.2.1"
